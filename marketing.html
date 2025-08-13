@@ -1,0 +1,1172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Affiliate Pro - Learn & Earn</title>
+    <style>
+        :root {
+            --primary: #4a6bff;
+            --secondary: #f8f9fa;
+            --dark: #343a40;
+            --light: #ffffff;
+            --success: #28a745;
+            --warning: #ffc107;
+            --danger: #dc3545;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f5f7fa;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--light);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #4a6bff, #6a11cb);
+            color: var(--light);
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background-color: var(--light);
+            color: var(--primary);
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: var(--light);
+        }
+
+        .btn-primary:hover {
+            background-color: #3a5bef;
+            transform: translateY(-2px);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            color: var(--dark);
+            margin-bottom: 1rem;
+        }
+
+        .section-title p {
+            color: #6c757d;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .courses {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .course-card {
+            background-color: var(--light);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
+        }
+
+        .course-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .course-img {
+            height: 180px;
+            background-color: #ddd;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .course-content {
+            padding: 1.5rem;
+        }
+
+        .course-content h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .course-content p {
+            color: #6c757d;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .progress-container {
+            margin-bottom: 1rem;
+        }
+
+        .progress-bar {
+            height: 6px;
+            background-color: #e9ecef;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .progress {
+            height: 100%;
+            background-color: var(--primary);
+            width: 0%;
+            transition: width 0.5s;
+        }
+
+        .progress-text {
+            font-size: 0.8rem;
+            color: #6c757d;
+            text-align: right;
+        }
+
+        .dashboard {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .sidebar {
+            background-color: var(--light);
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+            height: fit-content;
+        }
+
+        .sidebar-menu {
+            list-style: none;
+        }
+
+        .sidebar-menu li {
+            margin-bottom: 0.5rem;
+        }
+
+        .sidebar-menu a {
+            display: block;
+            padding: 0.7rem 1rem;
+            color: var(--dark);
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+
+        .sidebar-menu a:hover,
+        .sidebar-menu a.active {
+            background-color: rgba(74, 107, 255, 0.1);
+            color: var(--primary);
+        }
+
+        .sidebar-menu i {
+            margin-right: 0.5rem;
+            width: 20px;
+            text-align: center;
+        }
+
+        .main-content {
+            background-color: var(--light);
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background-color: var(--secondary);
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .stat-card h3 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-card p {
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+
+        .affiliate-links {
+            margin-top: 2rem;
+        }
+
+        .link-card {
+            background-color: var(--secondary);
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .link-info h4 {
+            margin-bottom: 0.5rem;
+        }
+
+        .link-info p {
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+
+        .link-actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .btn-sm {
+            padding: 0.5rem 1rem;
+            font-size: 0.8rem;
+        }
+
+        .btn-success {
+            background-color: var(--success);
+            color: var(--light);
+        }
+
+        .btn-warning {
+            background-color: var(--warning);
+            color: var(--dark);
+        }
+
+        .btn-danger {
+            background-color: var(--danger);
+            color: var(--light);
+        }
+
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+        }
+
+        .modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-content {
+            background-color: var(--light);
+            padding: 2rem;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            transform: translateY(-20px);
+            transition: all 0.3s;
+        }
+
+        .modal.active .modal-content {
+            transform: translateY(0);
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-header h3 {
+            font-size: 1.5rem;
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #6c757d;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        footer {
+            background-color: var(--dark);
+            color: var(--light);
+            padding: 3rem 2rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 1.5rem 0;
+        }
+
+        .footer-links a {
+            color: var(--light);
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+        }
+
+        .copyright {
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .dashboard {
+                grid-template-columns: 1fr;
+            }
+
+            .stats {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            .link-card {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+
+            .link-actions {
+                width: 100%;
+                justify-content: flex-end;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="#" class="logo">Affiliate Pro</a>
+            <div class="nav-links">
+                <a href="#courses">Courses</a>
+                <a href="#dashboard">Dashboard</a>
+                <a href="#resources">Resources</a>
+                <a href="#community">Community</a>
+                <a href="#" class="btn btn-primary" id="login-btn">Login</a>
+            </div>
+            <button class="mobile-menu-btn">☰</button>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Learn Affiliate Marketing & Start Earning</h1>
+            <p>Master the skills to promote products and earn commissions with our comprehensive courses and tools.</p>
+            <a href="#courses" class="btn btn-primary">Start Learning</a>
+        </div>
+    </section>
+
+    <section id="courses" class="container">
+        <div class="section-title">
+            <h2>Affiliate Marketing Courses</h2>
+            <p>Learn step-by-step how to build a successful affiliate marketing business from scratch.</p>
+        </div>
+        <div class="courses" id="courses-container">
+            <!-- Courses will be loaded here by JavaScript -->
+        </div>
+    </section>
+
+    <section id="dashboard" class="container" style="display: none;">
+        <div class="section-title">
+            <h2>Your Affiliate Dashboard</h2>
+            <p>Track your progress, manage your links, and monitor your earnings.</p>
+        </div>
+        <div class="dashboard">
+            <div class="sidebar">
+                <ul class="sidebar-menu">
+                    <li><a href="#" class="active" data-tab="overview"><i>📊</i> Overview</a></li>
+                    <li><a href="#" data-tab="courses"><i>🎓</i> My Courses</a></li>
+                    <li><a href="#" data-tab="links"><i>🔗</i> Affiliate Links</a></li>
+                    <li><a href="#" data-tab="earnings"><i>💰</i> Earnings</a></li>
+                    <li><a href="#" data-tab="tools"><i>🛠️</i> Tools</a></li>
+                </ul>
+            </div>
+            <div class="main-content">
+                <div id="overview-tab" class="tab-content active">
+                    <h3>Welcome Back, <span id="username">User</span>!</h3>
+                    <p>Here's your affiliate marketing progress at a glance.</p>
+
+                    <div class="stats">
+                        <div class="stat-card">
+                            <h3 id="completed-courses">0</h3>
+                            <p>Courses Completed</p>
+                        </div>
+                        <div class="stat-card">
+                            <h3 id="active-links">0</h3>
+                            <p>Active Links</p>
+                        </div>
+                        <div class="stat-card">
+                            <h3 id="total-earnings">$0</h3>
+                            <p>Total Earnings</p>
+                        </div>
+                        <div class="stat-card">
+                            <h3 id="conversion-rate">0%</h3>
+                            <p>Conversion Rate</p>
+                        </div>
+                    </div>
+
+                    <div class="progress-courses">
+                        <h4>Your Course Progress</h4>
+                        <div id="course-progress-container">
+                            <!-- Course progress will be loaded here -->
+                        </div>
+                    </div>
+                </div>
+
+                <div id="links-tab" class="tab-content">
+                    <div class="affiliate-links-header">
+                        <h3>Your Affiliate Links</h3>
+                        <button class="btn btn-primary" id="add-link-btn">Add New Link</button>
+                    </div>
+
+                    <div class="affiliate-links" id="links-container">
+                        <!-- Links will be loaded here by JavaScript -->
+                    </div>
+                </div>
+
+                <div id="courses-tab" class="tab-content">
+                    <h3>Your Courses</h3>
+                    <div id="user-courses-container">
+                        <!-- User's enrolled courses will be loaded here -->
+                    </div>
+                </div>
+
+                <div id="earnings-tab" class="tab-content">
+                    <h3>Earnings Report</h3>
+                    <div class="stats">
+                        <div class="stat-card">
+                            <h3 id="monthly-earnings">$0</h3>
+                            <p>This Month</p>
+                        </div>
+                        <div class="stat-card">
+                            <h3 id="total-clicks">0</h3>
+                            <p>Total Clicks</p>
+                        </div>
+                        <div class="stat-card">
+                            <h3 id="total-conversions">0</h3>
+                            <p>Total Conversions</p>
+                        </div>
+                    </div>
+
+                    <div class="earnings-chart">
+                        <canvas id="earningsChart" width="400" height="200"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Add Link Modal -->
+    <div class="modal" id="add-link-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Add New Affiliate Link</h3>
+                <button class="close-btn">&times;</button>
+            </div>
+            <form id="add-link-form">
+                <div class="form-group">
+                    <label for="link-name">Link Name</label>
+                    <input type="text" id="link-name" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="product-url">Product URL</label>
+                    <input type="url" id="product-url" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="affiliate-url">Your Affiliate URL</label>
+                    <input type="url" id="affiliate-url" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="link-category">Category</label>
+                    <select id="link-category" class="form-control" required>
+                        <option value="">Select a category</option>
+                        <option value="electronics">Electronics</option>
+                        <option value="fashion">Fashion</option>
+                        <option value="home">Home & Kitchen</option>
+                        <option value="health">Health & Beauty</option>
+                        <option value="software">Software</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Save Link</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div class="modal" id="login-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Login to Your Account</h3>
+                <button class="close-btn">&times;</button>
+            </div>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="login-email">Email</label>
+                    <input type="email" id="login-email" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" class="form-control" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+                <p style="text-align: center; margin-top: 1rem;">Don't have an account? <a href="#"
+                        id="show-signup">Sign up</a></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div class="modal" id="signup-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Create Your Account</h3>
+                <button class="close-btn">&times;</button>
+            </div>
+            <form id="signup-form">
+                <div class="form-group">
+                    <label for="signup-name">Full Name</label>
+                    <input type="text" id="signup-name" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="signup-email">Email</label>
+                    <input type="email" id="signup-email" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="signup-password">Password</label>
+                    <input type="password" id="signup-password" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="signup-confirm">Confirm Password</label>
+                    <input type="password" id="signup-confirm" class="form-control" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Create Account</button>
+                <p style="text-align: center; margin-top: 1rem;">Already have an account? <a href="#"
+                        id="show-login">Login</a></p>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <h3>Affiliate Pro</h3>
+            <p>Learn affiliate marketing and start earning commissions today.</p>
+            <div class="footer-links">
+                <a href="#">About Us</a>
+                <a href="#">Contact</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+            <p class="copyright">© 2023 Affiliate Pro. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Sample data for courses
+        const courses = [
+            {
+                id: 1,
+                title: "Affiliate Marketing Fundamentals",
+                description: "Learn the basics of affiliate marketing and how to get started.",
+                progress: 25,
+                enrolled: true,
+                image: "https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+            },
+            {
+                id: 2,
+                title: "Finding Profitable Niches",
+                description: "Discover how to identify and evaluate profitable niches for affiliate marketing.",
+                progress: 0,
+                enrolled: false,
+                image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+            },
+            {
+                id: 3,
+                title: "Content Creation for Affiliates",
+                description: "Learn how to create compelling content that converts visitors into buyers.",
+                progress: 0,
+                enrolled: false,
+                image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+            },
+            {
+                id: 4,
+                title: "SEO for Affiliate Marketers",
+                description: "Master SEO techniques to drive organic traffic to your affiliate sites.",
+                progress: 0,
+                enrolled: false,
+                image: "https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+            },
+            {
+                id: 5,
+                title: "Social Media Strategies",
+                description: "Leverage social media platforms to promote your affiliate links effectively.",
+                progress: 0,
+                enrolled: false,
+                image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+            },
+            {
+                id: 6,
+                title: "Advanced Conversion Optimization",
+                description: "Techniques to maximize your conversion rates and earnings.",
+                progress: 0,
+                enrolled: false,
+                image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+            }
+        ];
+
+        // Sample data for affiliate links
+        const affiliateLinks = [
+            {
+                id: 1,
+                name: "Web Hosting Plan",
+                productUrl: "https://example.com/hosting",
+                affiliateUrl: "https://example.com/ref=12345",
+                category: "software",
+                clicks: 42,
+                conversions: 3,
+                earnings: 75.00
+            },
+            {
+                id: 2,
+                name: "Wireless Headphones",
+                productUrl: "https://example.com/headphones",
+                affiliateUrl: "https://example.com/ref=12346",
+                category: "electronics",
+                clicks: 28,
+                conversions: 1,
+                earnings: 12.50
+            },
+            {
+                id: 3,
+                name: "Fitness Tracker",
+                productUrl: "https://example.com/fitness",
+                affiliateUrl: "https://example.com/ref=12347",
+                category: "health",
+                clicks: 15,
+                conversions: 0,
+                earnings: 0.00
+            }
+        ];
+
+        // User data
+        let user = {
+            loggedIn: false,
+            name: "John Doe",
+            email: "john@example.com",
+            completedCourses: 0,
+            totalEarnings: 87.50,
+            totalClicks: 85,
+            totalConversions: 4
+        };
+
+        // DOM Elements
+        const coursesContainer = document.getElementById('courses-container');
+        const dashboardSection = document.getElementById('dashboard');
+        const loginBtn = document.getElementById('login-btn');
+        const loginModal = document.getElementById('login-modal');
+        const signupModal = document.getElementById('signup-modal');
+        const addLinkModal = document.getElementById('add-link-modal');
+        const closeBtns = document.querySelectorAll('.close-btn');
+        const showSignup = document.getElementById('show-signup');
+        const showLogin = document.getElementById('show-login');
+        const loginForm = document.getElementById('login-form');
+        const signupForm = document.getElementById('signup-form');
+        const addLinkForm = document.getElementById('add-link-form');
+        const addLinkBtn = document.getElementById('add-link-btn');
+        const linksContainer = document.getElementById('links-container');
+        const sidebarLinks = document.querySelectorAll('.sidebar-menu a');
+        const tabContents = document.querySelectorAll('.tab-content');
+        const usernameSpan = document.getElementById('username');
+        const completedCoursesSpan = document.getElementById('completed-courses');
+        const activeLinksSpan = document.getElementById('active-links');
+        const totalEarningsSpan = document.getElementById('total-earnings');
+        const conversionRateSpan = document.getElementById('conversion-rate');
+        const monthlyEarningsSpan = document.getElementById('monthly-earnings');
+        const totalClicksSpan = document.getElementById('total-clicks');
+        const totalConversionsSpan = document.getElementById('total-conversions');
+        const courseProgressContainer = document.getElementById('course-progress-container');
+        const userCoursesContainer = document.getElementById('user-courses-container');
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', function () {
+            renderCourses();
+            updateStats();
+
+            // Check if user is logged in (for demo purposes)
+            if (user.loggedIn) {
+                showDashboard();
+            }
+        });
+
+        // Render courses
+        function renderCourses() {
+            coursesContainer.innerHTML = '';
+            courses.forEach(course => {
+                const courseCard = document.createElement('div');
+                courseCard.className = 'course-card';
+                courseCard.innerHTML = `
+                    <div class="course-img" style="background-image: url('${course.image}')"></div>
+                    <div class="course-content">
+                        <h3>${course.title}</h3>
+                        <p>${course.description}</p>
+                        ${course.enrolled ? `
+                        <div class="progress-container">
+                            <div class="progress-bar">
+                                <div class="progress" style="width: ${course.progress}%"></div>
+                            </div>
+                            <p class="progress-text">${course.progress}% Complete</p>
+                        </div>
+                        ` : ''}
+                        <button class="btn ${course.enrolled ? 'btn-success' : 'btn-primary'}" 
+                                data-id="${course.id}">
+                            ${course.enrolled ? 'Continue' : 'Enroll Now'}
+                        </button>
+                    </div>
+                `;
+                coursesContainer.appendChild(courseCard);
+            });
+
+            // Add event listeners to course buttons
+            document.querySelectorAll('.course-card .btn').forEach(btn => {
+                btn.addEventListener('click', function () {
+                    const courseId = parseInt(this.getAttribute('data-id'));
+                    const course = courses.find(c => c.id === courseId);
+
+                    if (!user.loggedIn) {
+                        loginModal.classList.add('active');
+                        return;
+                    }
+
+                    if (!course.enrolled) {
+                        course.enrolled = true;
+                        renderCourses();
+                        renderUserCourses();
+                        updateStats();
+                    }
+
+                    // In a real app, this would navigate to the course content
+                    alert(`Starting course: ${course.title}`);
+                });
+            });
+        }
+
+        // Render affiliate links
+        function renderAffiliateLinks() {
+            linksContainer.innerHTML = '';
+            affiliateLinks.forEach(link => {
+                const linkCard = document.createElement('div');
+                linkCard.className = 'link-card';
+                linkCard.innerHTML = `
+                    <div class="link-info">
+                        <h4>${link.name}</h4>
+                        <p>${link.category} • ${link.clicks} clicks • ${link.conversions} sales</p>
+                    </div>
+                    <div class="link-actions">
+                        <button class="btn btn-sm btn-primary">Stats</button>
+                        <button class="btn btn-sm btn-warning">Edit</button>
+                        <button class="btn btn-sm btn-danger">Delete</button>
+                    </div>
+                `;
+                linksContainer.appendChild(linkCard);
+            });
+        }
+
+        // Render user's enrolled courses
+        function renderUserCourses() {
+            userCoursesContainer.innerHTML = '';
+            const enrolledCourses = courses.filter(course => course.enrolled);
+
+            if (enrolledCourses.length === 0) {
+                userCoursesContainer.innerHTML = '<p>You are not enrolled in any courses yet.</p>';
+                return;
+            }
+
+            enrolledCourses.forEach(course => {
+                const courseCard = document.createElement('div');
+                courseCard.className = 'course-card';
+                courseCard.innerHTML = `
+                    <div class="course-img" style="background-image: url('${course.image}')"></div>
+                    <div class="course-content">
+                        <h3>${course.title}</h3>
+                        <div class="progress-container">
+                            <div class="progress-bar">
+                                <div class="progress" style="width: ${course.progress}%"></div>
+                            </div>
+                            <p class="progress-text">${course.progress}% Complete</p>
+                        </div>
+                        <button class="btn btn-primary" data-id="${course.id}">Continue</button>
+                    </div>
+                `;
+                userCoursesContainer.appendChild(courseCard);
+            });
+        }
+
+        // Render course progress for dashboard
+        function renderCourseProgress() {
+            courseProgressContainer.innerHTML = '';
+            const enrolledCourses = courses.filter(course => course.enrolled);
+
+            if (enrolledCourses.length === 0) {
+                courseProgressContainer.innerHTML = '<p>You are not enrolled in any courses yet.</p>';
+                return;
+            }
+
+            enrolledCourses.forEach(course => {
+                const progressItem = document.createElement('div');
+                progressItem.className = 'progress-item';
+                progressItem.innerHTML = `
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                        <span>${course.title}</span>
+                        <span>${course.progress}%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: ${course.progress}%"></div>
+                    </div>
+                `;
+                courseProgressContainer.appendChild(progressItem);
+            });
+        }
+
+        // Update statistics
+        function updateStats() {
+            if (!user.loggedIn) return;
+
+            usernameSpan.textContent = user.name;
+            completedCoursesSpan.textContent = courses.filter(c => c.enrolled && c.progress === 100).length;
+            activeLinksSpan.textContent = affiliateLinks.length;
+            totalEarningsSpan.textContent = `$${user.totalEarnings.toFixed(2)}`;
+            conversionRateSpan.textContent = `${(user.totalConversions / user.totalClicks * 100).toFixed(1)}%`;
+            monthlyEarningsSpan.textContent = `$${user.totalEarnings.toFixed(2)}`;
+            totalClicksSpan.textContent = user.totalClicks;
+            totalConversionsSpan.textContent = user.totalConversions;
+
+            renderCourseProgress();
+            renderAffiliateLinks();
+            renderUserCourses();
+        }
+
+        // Show dashboard section
+        function showDashboard() {
+            dashboardSection.style.display = 'block';
+            updateStats();
+        }
+
+        // Modal functions
+        function openModal(modal) {
+            modal.classList.add('active');
+        }
+
+        function closeModal(modal) {
+            modal.classList.remove('active');
+        }
+
+        function closeAllModals() {
+            closeModal(loginModal);
+            closeModal(signupModal);
+            closeModal(addLinkModal);
+        }
+
+        // Event listeners
+        loginBtn.addEventListener('click', function () {
+            if (user.loggedIn) {
+                // Logout functionality
+                user.loggedIn = false;
+                this.textContent = 'Login';
+                dashboardSection.style.display = 'none';
+            } else {
+                openModal(loginModal);
+            }
+        });
+
+        closeBtns.forEach(btn => {
+            btn.addEventListener('click', function () {
+                const modal = this.closest('.modal');
+                closeModal(modal);
+            });
+        });
+
+        showSignup.addEventListener('click', function (e) {
+            e.preventDefault();
+            closeModal(loginModal);
+            openModal(signupModal);
+        });
+
+        showLogin.addEventListener('click', function (e) {
+            e.preventDefault();
+            closeModal(signupModal);
+            openModal(loginModal);
+        });
+
+        addLinkBtn.addEventListener('click', function () {
+            if (!user.loggedIn) {
+                openModal(loginModal);
+                return;
+            }
+            openModal(addLinkModal);
+        });
+
+        // Tab switching
+        sidebarLinks.forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                const tabId = this.getAttribute('data-tab');
+
+                // Update active tab
+                sidebarLinks.forEach(l => l.classList.remove('active'));
+                this.classList.add('active');
+
+                // Show corresponding content
+                tabContents.forEach(content => {
+                    content.classList.remove('active');
+                    if (content.id === `${tabId}-tab`) {
+                        content.classList.add('active');
+                    }
+                });
+            });
+        });
+
+        // Form submissions
+        loginForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const email = document.getElementById('login-email').value;
+            const password = document.getElementById('login-password').value;
+
+            // Simple validation (in a real app, you would authenticate with a server)
+            if (email && password) {
+                user.loggedIn = true;
+                loginBtn.textContent = 'Logout';
+                closeModal(loginModal);
+                showDashboard();
+            } else {
+                alert('Please enter both email and password');
+            }
+        });
+
+        signupForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const name = document.getElementById('signup-name').value;
+            const email = document.getElementById('signup-email').value;
+            const password = document.getElementById('signup-password').value;
+            const confirm = document.getElementById('signup-confirm').value;
+
+            // Simple validation
+            if (!name || !email || !password || !confirm) {
+                alert('Please fill in all fields');
+                return;
+            }
+
+            if (password !== confirm) {
+                alert('Passwords do not match');
+                return;
+            }
+
+            // In a real app, you would create the account on your server
+            user = {
+                loggedIn: true,
+                name: name,
+                email: email,
+                completedCourses: 0,
+                totalEarnings: 0,
+                totalClicks: 0,
+                totalConversions: 0
+            };
+
+            loginBtn.textContent = 'Logout';
+            closeModal(signupModal);
+            showDashboard();
+        });
+
+        addLinkForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const name = document.getElementById('link-name').value;
+            const productUrl = document.getElementById('product-url').value;
+            const affiliateUrl = document.getElementById('affiliate-url').value;
+            const category = document.getElementById('link-category').value;
+
+            // Create new link
+            const newLink = {
+                id: affiliateLinks.length + 1,
+                name: name,
+                productUrl: productUrl,
+                affiliateUrl: affiliateUrl,
+                category: category,
+                clicks: 0,
+                conversions: 0,
+                earnings: 0.00
+            };
+
+            affiliateLinks.push(newLink);
+            renderAffiliateLinks();
+            updateStats();
+            closeModal(addLinkModal);
+            addLinkForm.reset();
+        });
+
+        // Close modal when clicking outside
+        window.addEventListener('click', function (e) {
+            if (e.target.classList.contains('modal')) {
+                closeAllModals();
+            }
+        });
+
+        // Mobile menu toggle (would need additional CSS)
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function () {
+            document.querySelector('.nav-links').classList.toggle('show');
+        });
+    </script>
+</body>
+
+</html>
