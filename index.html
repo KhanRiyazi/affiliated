@@ -2,1117 +2,1803 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rizwan Khan | Graphic Designer & Python Web Developer</title>
     <meta name="description"
-        content="Professional Affiliate Link Builder tool to create optimized, trackable affiliate links for Amazon, Canva, and other platforms with UTM parameters." />
-    <meta name="keywords"
-        content="affiliate marketing, link builder, Amazon Associates, Canva affiliate, UTM builder" />
-    <title>Professional Affiliate Link Builder | Portfolio Project</title>
+        content="Professional portfolio of Rizwan Khan - Canva Graphic Designer, Python Web Developer with expertise in Django, FastAPI, and Machine Learning with 6+ years teaching experience.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --bg: #0f172a;
-            --panel: #111827;
-            --muted: #94a3b8;
-            --text: #e5e7eb;
-            --accent: #22d3ee;
-            --ok: #10b981;
-            --warn: #f59e0b;
+            --primary: #3b82f6;
+            --primary-dark: #2563eb;
+            --primary-light: #93c5fd;
+            --secondary: #8b5cf6;
+            --secondary-dark: #7c3aed;
+            --dark: #1e293b;
+            --darker: #0f172a;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --light-gray: #e2e8f0;
+            --success: #10b981;
+            --warning: #f59e0b;
             --error: #ef4444;
-            --border: #1f2937;
-            --highlight: #1e40af;
+            --max-width: 1200px;
+            --border-radius: 12px;
+            --border-radius-lg: 20px;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
 
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
 
         body {
-            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-            background: linear-gradient(180deg, #0b1220, #0f172a);
-            color: var(--text);
+            font-family: 'Inter', sans-serif;
+            color: var(--dark);
             line-height: 1.6;
-            min-height: 100vh;
-        }
-
-        .wrap {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem 1rem;
-        }
-
-        header {
-            text-align: center;
-            margin-bottom: 2.5rem;
-        }
-
-        .logo {
-            font-size: 2.5rem;
-            font-weight: 700;
-            background: linear-gradient(90deg, #22d3ee, #3b82f6);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            margin-bottom: 0.5rem;
-        }
-
-        .tagline {
-            color: var(--muted);
-            font-size: 1.1rem;
-            max-width: 700px;
-            margin: 0 auto 1.5rem;
-        }
-
-        .card {
-            background: rgba(17, 24, 39, 0.85);
-            backdrop-filter: blur(10px);
-            border: 1px solid var(--border);
-            border-radius: 18px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
-            padding: 2rem;
-            margin-bottom: 1.5rem;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-
-        .card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+            background-color: var(--light);
+            overflow-x: hidden;
+            scroll-behavior: smooth;
         }
 
         h1,
         h2,
-        h3 {
-            color: #e2e8f0;
-            margin-bottom: 1rem;
-            font-weight: 600;
-            line-height: 1.3;
-        }
-
-        h1 {
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-            position: relative;
-            display: inline-block;
-        }
-
-        h1:after {
-            content: '';
-            position: absolute;
-            bottom: -8px;
-            left: 0;
-            width: 60px;
-            height: 3px;
-            background: var(--accent);
-            border-radius: 3px;
-        }
-
-        h2 {
-            font-size: 1.5rem;
-            margin-bottom: 1.25rem;
-        }
-
-        h3 {
-            font-size: 1.25rem;
-        }
-
-        p,
-        label,
-        small,
-        li {
-            color: var(--muted);
+        h3,
+        h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            line-height: 1.2;
         }
 
         a {
             text-decoration: none;
-            color: var(--accent);
-            transition: color 0.2s;
+            color: inherit;
         }
 
-        a:hover {
-            color: #67e8f9;
+        ul {
+            list-style: none;
         }
 
-        .row {
-            display: grid;
-            gap: 1rem;
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
         }
 
-        @media (min-width: 768px) {
-            .row {
-                grid-template-columns: repeat(3, 1fr);
-            }
-
-            .row-2 {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        input,
-        select,
-        textarea {
+        .container {
             width: 100%;
-            background: #0b1220;
-            color: var(--text);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 0.75rem 1rem;
-            font-family: inherit;
-            font-size: 0.95rem;
-            transition: border-color 0.2s, box-shadow 0.2s;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 1.5rem;
         }
 
-        input:focus,
-        select:focus,
-        textarea:focus {
-            outline: none;
-            border-color: var(--accent);
-            box-shadow: 0 0 0 3px rgba(34, 211, 238, 0.2);
+        section {
+            padding: 6rem 0;
+            position: relative;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            position: relative;
+            display: inline-block;
+            color: var(--darker);
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 2px;
         }
 
         .btn {
-            cursor: pointer;
-            border: none;
-            border-radius: 12px;
-            padding: 0.75rem 1.25rem;
-            font-weight: 600;
-            font-family: inherit;
-            font-size: 0.95rem;
             display: inline-flex;
             align-items: center;
             justify-content: center;
             gap: 0.5rem;
-            transition: all 0.2s;
-        }
-
-        .btn.primary {
-            background: var(--accent);
-            color: #0b1220;
-        }
-
-        .btn.primary:hover {
-            background: #06b6d4;
-            transform: translateY(-1px);
-        }
-
-        .btn.ghost {
-            background: transparent;
-            border: 1px solid #334155;
-            color: #e5e7eb;
-        }
-
-        .btn.ghost:hover {
-            background: rgba(255, 255, 255, 0.05);
-            border-color: #475569;
-        }
-
-        .btn.small {
-            padding: 0.5rem 0.75rem;
-            font-size: 0.85rem;
-        }
-
-        .grid {
-            display: grid;
-            gap: 1rem;
-        }
-
-        .cards {
-            display: grid;
-            gap: 1rem;
-        }
-
-        @media (min-width: 768px) {
-            .cards {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        .product {
-            background: #0b1220;
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 1.25rem;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-
-        .product:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        }
-
-        .product h3 {
-            color: #e5e7eb;
-            margin: 0 0 0.5rem;
-            font-size: 1.1rem;
-        }
-
-        .meta {
-            display: flex;
-            gap: 0.5rem;
-            flex-wrap: wrap;
-            margin-bottom: 0.75rem;
-        }
-
-        .tag {
-            font-size: 0.75rem;
-            border: 1px solid #334155;
-            border-radius: 999px;
-            color: #a5b4fc;
-            padding: 0.25rem 0.5rem;
-            background: rgba(30, 64, 175, 0.1);
-        }
-
-        .cta {
-            display: flex;
-            gap: 0.75rem;
-            margin-top: 1rem;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-
-        .link-preview {
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            background: #020617;
-            border-radius: 10px;
-            padding: 0.75rem;
-            border: 1px dashed #334155;
-            font-size: 0.85rem;
-            margin: 0.5rem 0;
-        }
-
-        .disclosure {
-            font-size: 0.85rem;
-            color: #cbd5e1;
-            border-left: 3px solid var(--warn);
-            padding-left: 0.75rem;
-            margin-top: 1.5rem;
-        }
-
-        .ok {
-            color: var(--ok);
-        }
-
-        .warn {
-            color: var(--warn);
-        }
-
-        .error {
-            color: var(--error);
-        }
-
-        .badge {
-            display: inline-block;
-            padding: 0.25rem 0.5rem;
-            border-radius: 6px;
-            font-size: 0.75rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--border-radius);
             font-weight: 600;
-            background: rgba(34, 211, 238, 0.1);
-            color: var(--accent);
-            margin-left: 0.5rem;
-        }
-
-        .features {
-            display: grid;
-            gap: 1.5rem;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            margin: 2rem 0;
-        }
-
-        .feature {
-            background: rgba(17, 24, 39, 0.6);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 1.5rem;
-        }
-
-        .feature h3 {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            margin-bottom: 0.75rem;
-        }
-
-        .feature-icon {
-            width: 24px;
-            height: 24px;
-            color: var(--accent);
-        }
-
-        footer {
             text-align: center;
-            margin-top: 3rem;
-            padding-top: 2rem;
-            border-top: 1px solid var(--border);
-            color: var(--muted);
-            font-size: 0.9rem;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            font-family: 'Inter', sans-serif;
+            white-space: nowrap;
         }
 
-        .portfolio-section {
-            margin-top: 3rem;
-            text-align: center;
+        .btn i {
+            font-size: 1rem;
         }
 
-        .portfolio-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            margin-top: 1rem;
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
         }
 
-        /* Toast notification */
-        .toast {
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-secondary {
+            background-color: var(--secondary);
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--secondary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        .text-primary {
+            color: var(--primary);
+        }
+
+        .text-secondary {
+            color: var(--secondary);
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: var(--shadow-sm);
             position: fixed;
-            bottom: 1.5rem;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--panel);
-            color: var(--text);
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            padding: 0.75rem 1.25rem;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            width: 100%;
             z-index: 1000;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            color: var(--dark);
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: var(--dark);
+            font-size: 1.5rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            min-height: 800px;
             display: flex;
             align-items: center;
-            gap: 0.5rem;
-            animation: slideIn 0.3s ease-out;
-        }
-
-        @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateX(-50%) translateY(20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateX(-50%) translateY(0);
-            }
-        }
-
-        .toast.success {
-            border-left: 4px solid var(--ok);
-        }
-
-        .toast.error {
-            border-left: 4px solid var(--error);
-        }
-
-        .toast.warning {
-            border-left: 4px solid var(--warn);
-        }
-
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-
-            .row,
-            .row-2 {
-                grid-template-columns: 1fr;
-            }
-
-            .cards {
-                grid-template-columns: 1fr;
-            }
-
-            h1 {
-                font-size: 1.75rem;
-            }
-        }
-
-        /* Loading spinner */
-        .spinner {
-            display: inline-block;
-            width: 1rem;
-            height: 1rem;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            border-radius: 50%;
-            border-top-color: var(--accent);
-            animation: spin 1s ease-in-out infinite;
-        }
-
-        @keyframes spin {
-            to {
-                transform: rotate(360deg);
-            }
-        }
-
-        /* Tooltip */
-        .tooltip {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.05) 0%, rgba(255, 255, 255, 1) 100%);
+            padding-top: 80px;
             position: relative;
-            display: inline-block;
+            overflow: hidden;
         }
 
-        .tooltip .tooltip-text {
-            visibility: hidden;
-            width: 200px;
-            background-color: var(--panel);
-            color: var(--text);
-            text-align: center;
-            border-radius: 6px;
-            padding: 0.5rem;
+        .hero::before {
+            content: '';
             position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, rgba(255, 255, 255, 0) 70%);
+            z-index: -1;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--darker);
+            line-height: 1.1;
+        }
+
+        .hero-text h1 span {
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .hero-text p {
+            font-size: 1.25rem;
+            color: var(--gray);
+            margin-bottom: 2rem;
+            max-width: 500px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-image {
+            position: relative;
+            perspective: 1000px;
+        }
+
+        .hero-image img {
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-lg);
             z-index: 1;
-            bottom: 125%;
+            position: relative;
+            transform: rotateY(-10deg) rotateX(5deg);
+            transition: var(--transition);
+        }
+
+        .hero-image:hover img {
+            transform: rotateY(0) rotateX(0);
+        }
+
+        .hero-image::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 100%;
+            height: 100%;
+            border: 3px solid var(--primary);
+            border-radius: var(--border-radius-lg);
+            z-index: 0;
+            transition: var(--transition);
+        }
+
+        .hero-image:hover::before {
+            top: -15px;
+            right: -15px;
+        }
+
+        .scroll-down {
+            position: absolute;
+            bottom: 2rem;
             left: 50%;
             transform: translateX(-50%);
-            opacity: 0;
-            transition: opacity 0.3s;
-            font-size: 0.85rem;
-            border: 1px solid var(--border);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: var(--gray);
+            font-size: 0.875rem;
+            cursor: pointer;
         }
 
-        .tooltip:hover .tooltip-text {
-            visibility: visible;
-            opacity: 1;
+        .scroll-down i {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            animation: bounce 2s infinite;
         }
 
-        /* Documentation section */
-        .docs {
+        @keyframes bounce {
+
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: translateY(0);
+            }
+
+            40% {
+                transform: translateY(-10px);
+            }
+
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+
+        /* About Section */
+        .about {
+            background-color: white;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+            perspective: 1000px;
+        }
+
+        .about-image img {
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-lg);
+            transform: rotateY(10deg);
+            transition: var(--transition);
+        }
+
+        .about-image:hover img {
+            transform: rotateY(0);
+        }
+
+        .about-image::before {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: -20px;
+            width: 100%;
+            height: 100%;
+            border: 3px solid var(--secondary);
+            border-radius: var(--border-radius-lg);
+            z-index: -1;
+            transition: var(--transition);
+        }
+
+        .about-image:hover::before {
+            bottom: -15px;
+            left: -15px;
+        }
+
+        .about-text h2 {
+            margin-bottom: 1.5rem;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+            color: var(--gray);
+        }
+
+        .skills {
+            margin-top: 2rem;
+        }
+
+        .skills h3 {
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .skill-tag {
+            background-color: var(--primary-light);
+            color: var(--primary-dark);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .skill-tag:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .experience-timeline {
             margin-top: 3rem;
         }
 
-        .doc-section {
+        .timeline-item {
+            position: relative;
+            padding-left: 2rem;
             margin-bottom: 2rem;
         }
 
-        .doc-section h3 {
-            margin-bottom: 0.75rem;
-            color: var(--accent);
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--primary);
         }
 
-        .doc-section ul {
-            padding-left: 1.5rem;
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: 5px;
+            top: 17px;
+            width: 2px;
+            height: calc(100% - 12px);
+            background: var(--light-gray);
         }
 
-        .doc-section li {
+        .timeline-item:last-child::after {
+            display: none;
+        }
+
+        .timeline-date {
+            font-size: 0.875rem;
+            color: var(--gray);
             margin-bottom: 0.5rem;
+        }
+
+        .timeline-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-description {
+            color: var(--gray);
+            font-size: 0.9375rem;
+        }
+
+        /* Services Section */
+        .services {
+            background-color: #f8fafc;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border-bottom: 4px solid transparent;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+            border-bottom-color: var(--primary);
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card h3 {
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .project-image {
+            height: 220px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .project-card:hover .project-image img {
+            transform: scale(1.1);
+        }
+
+        .project-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background-color: var(--primary);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            z-index: 1;
+        }
+
+        .project-info {
+            padding: 1.5rem;
+        }
+
+        .project-info h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .project-info p {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-tag {
+            background-color: var(--light-gray);
+            color: var(--dark);
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        /* Tech Stack Section */
+        .tech-stack {
+            background-color: white;
+        }
+
+        .tech-stack-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .tech-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            width: 120px;
+            transition: var(--transition);
+        }
+
+        .tech-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .tech-icon {
+            width: 80px;
+            height: 80px;
+            background-color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow);
+            font-size: 2.5rem;
+            color: var(--primary);
+        }
+
+        .tech-name {
+            font-weight: 500;
+            text-align: center;
+        }
+
+        /* Teaching Section */
+        .teaching {
+            background-color: #f8fafc;
+        }
+
+        .teaching-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .teaching-image img {
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .teaching-text h2 {
+            margin-bottom: 1.5rem;
+        }
+
+        .teaching-text p {
+            margin-bottom: 1.5rem;
+            color: var(--gray);
+        }
+
+        .education-list {
+            margin-top: 2rem;
+        }
+
+        .education-item {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .education-icon {
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-light);
+            color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            flex-shrink: 0;
+        }
+
+        .education-info h4 {
+            margin-bottom: 0.25rem;
+        }
+
+        .education-info p {
+            margin-bottom: 0;
+            font-size: 0.875rem;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            background-color: white;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            position: relative;
+            border: 1px solid var(--light-gray);
+            transition: var(--transition);
+        }
+
+        .testimonial-card:hover {
+            box-shadow: var(--shadow-lg);
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            font-size: 4rem;
+            color: var(--primary-light);
+            font-family: 'Playfair Display', serif;
+            line-height: 1;
+            opacity: 0.3;
+        }
+
+        .testimonial-content {
+            margin-bottom: 1.5rem;
+            color: var(--gray);
+            font-style: italic;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-image {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        .author-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .author-info h4 {
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .author-info p {
+            color: var(--gray);
+            font-size: 0.875rem;
+        }
+
+        /* Contact Section */
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-info h2 {
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-info p {
+            color: var(--gray);
+            margin-bottom: 2rem;
+            max-width: 400px;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-light);
+            color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            flex-shrink: 0;
+        }
+
+        .contact-text h4 {
+            margin-bottom: 0.25rem;
+        }
+
+        .contact-text a:hover {
+            color: var(--primary);
+        }
+
+        .contact-text p {
+            color: var(--gray);
+            margin: 0;
+            font-size: 0.875rem;
+        }
+
+        .contact-form {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            box-shadow: var(--shadow);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--light-gray);
+            border-radius: var(--border-radius);
+            font-family: 'Inter', sans-serif;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--darker);
+            color: white;
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-col h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+
+        .footer-col ul {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .footer-col a {
+            color: var(--light-gray);
+            transition: color 0.3s;
+        }
+
+        .footer-col a:hover {
+            color: var(--primary);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--light-gray);
+            font-size: 0.875rem;
+        }
+
+        /* Back to top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 999;
+            box-shadow: var(--shadow);
+            border: none;
+        }
+
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+        }
+
+        /* Floating particles */
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .particle {
+            position: absolute;
+            background: rgba(59, 130, 246, 0.2);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+
+            .hero-content,
+            .about-content,
+            .teaching-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-text {
+                order: 1;
+            }
+
+            .hero-image {
+                order: 0;
+                margin-bottom: 3rem;
+            }
+
+            .hero-text h1 {
+                font-size: 2.75rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background-color: white;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 2rem;
+                transition: left 0.3s;
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .hero-text h1 {
+                font-size: 2.25rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            section {
+                padding: 4rem 0;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .container {
+                padding: 0 1rem;
+            }
+
+            .section-title {
+                font-size: 1.75rem;
+            }
+
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 
 <body>
-    <div class="wrap">
-        <header>
-            <div class="logo">Affiliate Link Builder</div>
-            <p class="tagline">A professional tool to create optimized, trackable affiliate links for Amazon, Canva, and
-                other platforms with UTM parameters.</p>
-        </header>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">Rizwan Khan</a>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#teaching">Teaching</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <button class="hamburger" id="hamburger">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
 
-        <div class="card">
-            <h1>Generate Affiliate Links <span class="badge">PRO</span></h1>
-            <p style="margin-bottom: 1.5rem;">Paste a product URL, choose the platform, set your affiliate IDs, and get
-                clean, optimized affiliate links with tracking parameters.</p>
-
-            <div class="grid" style="gap: 1rem;">
-                <div class="row">
-                    <div>
-                        <label for="baseUrl">Product URL</label>
-                        <input id="baseUrl"
-                            placeholder="https://www.amazon.com/dp/B0... or your Canva affiliate link" />
-                    </div>
-                    <div>
-                        <label for="platform">Platform</label>
-                        <select id="platform">
-                            <option value="amazon">Amazon Associates</option>
-                            <option value="canva">Canva Affiliate</option>
-                            <option value="generic">Generic Affiliate Link</option>
-                            <option value="flipkart">Flipkart Affiliate</option>
-                            <option value="ebay">eBay Partner Network</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label for="title">Link Title (for card)</label>
-                        <input id="title" placeholder="e.g., Premium Wireless Headphones" />
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="particles" id="particles"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Hi, I'm <span>Rizwan Khan</span></h1>
+                    <p>Creative Graphic Designer & Python Web Developer with expertise in AI/ML and 6+ years of STEM
+                        teaching experience.</p>
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn btn-primary">
+                            <i class="fas fa-eye"></i> View My Work
+                        </a>
+                        <a href="#contact" class="btn btn-outline">
+                            <i class="fas fa-paper-plane"></i> Contact Me
+                        </a>
                     </div>
                 </div>
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+                        alt="Rizwan Khan">
+                </div>
+            </div>
+        </div>
+        <div class="scroll-down" id="scrollDown">
+            <i class="fas fa-chevron-down"></i>
+            <span>Scroll Down</span>
+        </div>
+    </section>
 
-                <div class="row">
-                    <div>
-                        <label for="tag">Affiliate ID/Parameter <span class="tooltip">ℹ️
-                                <span class="tooltip-text">For Amazon: yourtag-21 (IN) / yourtag-20 (US)<br>For Generic:
-                                    param=value (e.g., ref=username)</span>
-                            </span></label>
-                        <input id="tag" placeholder="yourtag-21 (Amazon) or param=value (Generic)" />
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1580927752452-89d86da3fa0a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+                        alt="About Rizwan Khan">
+                </div>
+                <div class="about-text">
+                    <h2>Innovative Developer & Educator</h2>
+                    <p>I'm a passionate full-stack developer specializing in Python web development and graphic design,
+                        with extensive experience in creating visually appealing and functional digital solutions.</p>
+                    <p>With expertise in Django, FastAPI, and machine learning, I build robust web applications that
+                        solve real-world problems. My design thinking approach ensures user-centric solutions.</p>
+
+                    <div class="skills">
+                        <h3>Technical Skills</h3>
+                        <div class="skill-tags" id="skillsContainer">
+                            <!-- Skills will be added by JavaScript -->
+                        </div>
                     </div>
-                    <div>
-                        <label for="utmSource">UTM Source (optional)</label>
-                        <input id="utmSource" placeholder="pinterest, newsletter, blog, etc." />
-                    </div>
-                    <div>
-                        <label for="utmCampaign">UTM Campaign (optional)</label>
-                        <input id="utmCampaign" placeholder="summer_sale, holiday_deals, etc." />
+
+                    <div class="experience-timeline">
+                        <h3 style="margin-bottom: 1.5rem;">Professional Journey</h3>
+                        <div class="timeline-item">
+                            <div class="timeline-date">2020 - Present</div>
+                            <div class="timeline-title">Freelance Developer & Designer</div>
+                            <div class="timeline-description">Building custom web solutions and graphic designs for
+                                clients worldwide.</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">2017 - Present</div>
+                            <div class="timeline-title">Senior Secondary Teacher</div>
+                            <div class="timeline-description">Teaching Mathematics and Computer Science at CBSE/ICSE
+                                schools.</div>
+                        </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
 
-                <div class="row">
-                    <div>
-                        <label for="desc">Short Description (optional)</label>
-                        <input id="desc" placeholder="Highlight key benefits or features" />
+    <!-- Services Section -->
+    <section class="services" id="skills">
+        <div class="container">
+            <h2 class="section-title">My Expertise</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-paint-brush"></i>
                     </div>
-                    <div>
-                        <label for="imageUrl">Image URL (optional)</label>
-                        <input id="imageUrl" placeholder="Direct image URL for product card" />
+                    <h3>Graphic Design</h3>
+                    <p>Professional Canva designs for social media, branding, and marketing materials with a focus on
+                        visual storytelling.</p>
+                    <a href="#projects" class="btn btn-outline">See Design Work</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-code"></i>
                     </div>
-                    <div style="display: flex; align-items: flex-end; gap: 0.75rem;">
-                        <button class="btn primary" id="build">
-                            <span id="buildText">Generate Link</span>
-                            <span id="buildSpinner" class="spinner" style="display: none;"></span>
+                    <h3>Web Development</h3>
+                    <p>Custom web applications built with Python, Django, FastAPI, and modern JavaScript frameworks.</p>
+                    <a href="#projects" class="btn btn-outline">View Projects</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>AI/ML Solutions</h3>
+                    <p>Machine learning models and AI-powered applications to automate processes and extract insights.
+                    </p>
+                    <a href="#contact" class="btn btn-outline">Discuss Project</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack Section -->
+    <section class="tech-stack">
+        <div class="container">
+            <h2 class="section-title">Technical Stack</h2>
+            <div class="tech-stack-container">
+                <!-- Tech items will be added by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid" id="projectsContainer">
+                <!-- Projects will be added by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Teaching Section -->
+    <section class="teaching" id="teaching">
+        <div class="container">
+            <h2 class="section-title">Teaching Experience</h2>
+            <div class="teaching-content">
+                <div class="teaching-image">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+                        alt="Teaching Experience">
+                </div>
+                <div class="teaching-text">
+                    <h2>STEM Education Specialist</h2>
+                    <p>With over 6 years of experience teaching Mathematics and Computer Science at senior secondary
+                        levels (CBSE, AMU, and ICSE), I've developed a unique approach that combines technical knowledge
+                        with practical applications.</p>
+                    <p>My teaching methodology focuses on project-based learning, critical thinking, and real-world
+                        problem solving to prepare students for the challenges of the digital age.</p>
+
+                    <div class="education-list">
+                        <div class="education-item">
+                            <div class="education-icon">
+                                <i class="fas fa-chalkboard-teacher"></i>
+                            </div>
+                            <div class="education-info">
+                                <h4>Mathematics Instruction</h4>
+                                <p>Specialized in making complex mathematical concepts accessible and engaging for
+                                    students.</p>
+                            </div>
+                        </div>
+                        <div class="education-item">
+                            <div class="education-icon">
+                                <i class="fas fa-laptop-code"></i>
+                            </div>
+                            <div class="education-info">
+                                <h4>Computer Science</h4>
+                                <p>Teaching programming fundamentals, web development, and computational thinking.</p>
+                            </div>
+                        </div>
+                        <div class="education-item">
+                            <div class="education-icon">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <div class="education-info">
+                                <h4>STEM Innovation</h4>
+                                <p>Developing curriculum that integrates Science, Technology, Engineering, and
+                                    Mathematics.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">Client & Student Testimonials</h2>
+            <div class="testimonials-grid" id="testimonialsContainer">
+                <!-- Testimonials will be added by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2>Let's Collaborate</h2>
+                    <p>Have a project in mind or want to discuss potential opportunities? Feel free to reach out for
+                        design, development, or educational consulting services.</p>
+
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Email</h4>
+                                <a href="mailto:rizwanrka826@gmail.com">rizwanrka826@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Phone</h4>
+                                <a href="tel:+919897511437">+91 98975 11437</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Location</h4>
+                                <p>Pan Oasis Noida, Delhi</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="social-links" style="margin-top: 2rem;">
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i> Send Message
                         </button>
-                        <button class="btn ghost" id="copyAll">Copy All</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3>Rizwan Khan</h3>
+                    <p>Graphic Designer & Python Web Developer with expertise in AI/ML and STEM education.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#skills">Graphic Design</a></li>
+                        <li><a href="#skills">Web Development</a></li>
+                        <li><a href="#skills">AI/ML Solutions</a></li>
+                        <li><a href="#teaching">Educational Consulting</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Connect</h3>
+                    <div class="social-links">
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
             </div>
-
-            <p class="disclosure">
-                <strong>Disclosure:</strong> Some links are affiliate links. This means I may earn a commission if you
-                click through and make a purchase, at no additional cost to you. Your support helps maintain this tool.
-            </p>
-        </div>
-
-        <div class="card">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
-                <h2 style="margin: 0;">Your Generated Links</h2>
-                <div style="display: flex; gap: 0.5rem;">
-                    <button class="btn ghost small" id="clearAll">Clear All</button>
-                    <button class="btn ghost small" id="exportJson">Export JSON</button>
-                </div>
-            </div>
-            <div id="list" class="cards"></div>
-        </div>
-
-        <div class="docs">
-            <h2>Documentation</h2>
-
-            <div class="doc-section">
-                <h3>How to Use This Tool</h3>
-                <ul>
-                    <li>Paste any product URL (Amazon, Canva, etc.) in the Product URL field</li>
-                    <li>Select the appropriate platform from the dropdown</li>
-                    <li>Enter your affiliate ID or parameter (Amazon tag, ref code, etc.)</li>
-                    <li>Add optional UTM parameters for tracking</li>
-                    <li>Click "Generate Link" to create your optimized affiliate link</li>
-                    <li>Copy individual links or export all links as JSON</li>
-                </ul>
-            </div>
-
-            <div class="doc-section">
-                <h3>Platform-Specific Instructions</h3>
-                <ul>
-                    <li><strong>Amazon Associates:</strong> Enter your full Associate tag (e.g., yourtag-21 for India,
-                        yourtag-20 for US)</li>
-                    <li><strong>Canva Affiliate:</strong> Paste your exact Canva affiliate link as provided in your
-                        dashboard</li>
-                    <li><strong>Generic Affiliate Links:</strong> Use format "param=value" (e.g., "ref=yourusername" or
-                        "aff_id=12345")</li>
-                    <li><strong>Flipkart Affiliate:</strong> Use your Flipkart affiliate ID in the parameter field</li>
-                    <li><strong>eBay Partner Network:</strong> Enter your eBay campaign ID</li>
-                </ul>
-            </div>
-
-            <div class="doc-section">
-                <h3>Best Practices</h3>
-                <ul>
-                    <li>Always disclose affiliate relationships to your audience</li>
-                    <li>Use descriptive UTM parameters for better tracking</li>
-                    <li>Test links before publishing to ensure they work correctly</li>
-                    <li>Regularly check your affiliate dashboard for performance metrics</li>
-                    <li>Rotate UTM campaigns to identify top-performing channels</li>
-                </ul>
+            <div class="copyright">
+                <p>&copy; <span id="currentYear"></span> Rizwan Khan. All rights reserved.</p>
             </div>
         </div>
+    </footer>
 
-        <div class="features">
-            <div class="feature">
-                <h3><svg class="feature-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                    </svg> Fast Link Generation</h3>
-                <p>Create optimized affiliate links in seconds with automatic parameter insertion and validation.</p>
-            </div>
-            <div class="feature">
-                <h3><svg class="feature-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z">
-                        </path>
-                    </svg> Secure & Reliable</h3>
-                <p>All processing happens in your browser. No data is stored on any server for maximum privacy.</p>
-            </div>
-            <div class="feature">
-                <h3><svg class="feature-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
-                        </path>
-                    </svg> Multi-Platform Support</h3>
-                <p>Works with Amazon, Canva, Flipkart, eBay, and any generic affiliate program.</p>
-            </div>
-        </div>
-
-        <div class="portfolio-section">
-            <h2>Portfolio Project</h2>
-            <p>This Affiliate Link Builder was developed as part of my professional portfolio to demonstrate front-end
-                development skills and affiliate marketing expertise.</p>
-            <a href="./main.html" class="btn primary portfolio-btn">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M21 12a9 9 0 0 1-9 9H9a9 9 0 0 1-9-9 9 9 0 0 1 9-9h3"></path>
-                    <polyline points="21 12 12 12 12 3"></polyline>
-                </svg>
-                View My Portfolio
-            </a>
-        </div>
-
-        <footer>
-            <p>© 2023 Professional Affiliate Link Builder. All rights reserved.</p>
-            <p style="margin-top: 0.5rem;">Designed and developed with ❤️ for affiliate marketers worldwide.</p>
-        </footer>
-    </div>
+    <!-- Back to top button -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
     <script>
-        (function () {
-            // DOM elements
-            const $ = s => document.querySelector(s);
-            const $$ = s => document.querySelectorAll(s);
-            const list = $("#list");
-            const buildBtn = $("#build");
-            const buildText = $("#buildText");
-            const buildSpinner = $("#buildSpinner");
+        // Mobile Menu Toggle
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
 
-            // State management
-            let links = JSON.parse(localStorage.getItem('affiliateLinks')) || [];
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.innerHTML = navLinks.classList.contains('active') ?
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
 
-            // Initialize the app
-            function init() {
-                renderLinks();
-                setupEventListeners();
-            }
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
 
-            // Set up event listeners
-            function setupEventListeners() {
-                $("#build").addEventListener("click", generateLink);
-                $("#copyAll").addEventListener("click", copyAllLinks);
-                $("#clearAll").addEventListener("click", clearAllLinks);
-                $("#exportJson").addEventListener("click", exportLinksAsJson);
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
 
-                // Platform-specific guidance
-                $("#platform").addEventListener("change", function () {
-                    const platform = this.value;
-                    updatePlaceholderText(platform);
-                });
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
 
-                // Load any saved links
-                if (links.length > 0) {
-                    showToast(`Loaded ${links.length} saved links`, 'success');
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
                 }
+            });
+        });
+
+        // Scroll down button
+        document.getElementById('scrollDown').addEventListener('click', () => {
+            window.scrollTo({
+                top: document.getElementById('about').offsetTop - 80,
+                behavior: 'smooth'
+            });
+        });
+
+        // Back to top button
+        const backToTop = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('active');
+            } else {
+                backToTop.classList.remove('active');
             }
+        });
 
-            // Update input placeholder based on platform
-            function updatePlaceholderText(platform) {
-                const tagInput = $("#tag");
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
 
-                switch (platform) {
-                    case 'amazon':
-                        tagInput.placeholder = 'yourtag-21 (IN) / yourtag-20 (US)';
-                        break;
-                    case 'canva':
-                        tagInput.placeholder = 'Paste your exact Canva affiliate link';
-                        break;
-                    case 'generic':
-                        tagInput.placeholder = 'param=value (e.g., ref=username)';
-                        break;
-                    case 'flipkart':
-                        tagInput.placeholder = 'Your Flipkart affiliate ID';
-                        break;
-                    case 'ebay':
-                        tagInput.placeholder = 'Your eBay campaign ID';
-                        break;
-                    default:
-                        tagInput.placeholder = 'Enter affiliate parameter';
-                }
-            }
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
 
-            // Parse URL with validation
-            function parseURL(url) {
-                try {
-                    const u = new URL(url);
+        // Skills data
+        const skills = [
+            'Canva Design', 'Python', 'Django', 'FastAPI',
+            'HTML/CSS/JS', 'Web Scraping', 'Selenium', 'Machine Learning',
+            'AI Integration', 'Data Visualization', 'Responsive Design', 'UI/UX',
+            'Graphic Design', 'Teaching', 'Curriculum Development', 'STEM Education'
+        ];
 
-                    // Ensure URL has http/https protocol
-                    if (!u.protocol.match(/^https?:$/)) {
-                        throw new Error('URL must start with http:// or https://');
-                    }
+        // Render skills
+        const skillsContainer = document.getElementById('skillsContainer');
+        skills.forEach(skill => {
+            const skillTag = document.createElement('span');
+            skillTag.className = 'skill-tag';
+            skillTag.textContent = skill;
+            skillsContainer.appendChild(skillTag);
+        });
 
-                    return u;
-                } catch (e) {
-                    showToast('Invalid URL. Please include http:// or https://', 'error');
-                    return null;
-                }
-            }
+        // Tech stack data
+        const techStack = [
+            { name: 'Python', icon: 'fab fa-python' },
+            { name: 'Django', icon: 'fab fa-python' },
+            { name: 'FastAPI', icon: 'fas fa-server' },
+            { name: 'JavaScript', icon: 'fab fa-js' },
+            { name: 'HTML5', icon: 'fab fa-html5' },
+            { name: 'CSS3', icon: 'fab fa-css3-alt' },
+            { name: 'Canva', icon: 'fas fa-paint-brush' },
+            { name: 'Selenium', icon: 'fas fa-robot' },
+            { name: 'Machine Learning', icon: 'fas fa-brain' },
+            { name: 'Git', icon: 'fab fa-git-alt' },
+            { name: 'MySQL', icon: 'fas fa-database' },
+            { name: 'Bootstrap', icon: 'fab fa-bootstrap' }
+        ];
 
-            // Add or update URL parameter
-            function addOrUpdateParam(urlObj, key, value) {
-                if (!value) return false;
+        // Render tech stack
+        const techStackContainer = document.querySelector('.tech-stack-container');
+        techStack.forEach(tech => {
+            const techItem = document.createElement('div');
+            techItem.className = 'tech-item';
 
-                const hasParam = urlObj.searchParams.has(key);
-                urlObj.searchParams.set(key, value.trim());
-                return hasParam;
-            }
-
-            // Check if host is Amazon
-            function isAmazonHost(host) {
-                return /\.amazon\.(com|co\.uk|de|fr|it|es|ca|com\.mx|com\.br|com\.au|in|jp|cn|sa|sg|ae|se|nl|pl|tr)/i.test(host);
-            }
-
-            // Check if host is Flipkart
-            function isFlipkartHost(host) {
-                return /\.flipkart\.com/i.test(host);
-            }
-
-            // Check if host is eBay
-            function isEbayHost(host) {
-                return /\.ebay\.(com|co\.uk|de|fr|it|es|ca|com\.au|at|be|ch|ie|nl|ph|sg|my|vn|hk)/i.test(host);
-            }
-
-            // Build Amazon affiliate link
-            function buildAmazon(urlObj, tag) {
-                if (!tag) {
-                    throw new Error('Amazon Associate tag is required (e.g., yourtag-21)');
-                }
-
-                // Validate Amazon tag format
-                if (!tag.match(/^[a-zA-Z0-9\-]+-\d{2}$/)) {
-                    throw new Error('Amazon tag should be in format: yourtag-20 or yourtag-21');
-                }
-
-                addOrUpdateParam(urlObj, 'tag', tag);
-
-                // Remove competing affiliate parameters
-                urlObj.searchParams.delete('ascsubtag');
-                urlObj.searchParams.delete('ascsubtag');
-
-                return urlObj.toString();
-            }
-
-            // Build Canva affiliate link
-            function buildCanva(urlObj) {
-                // Validate it's a Canva link
-                if (!urlObj.hostname.includes('canva.com')) {
-                    showToast('This doesn\'t look like a Canva link. Use your exact affiliate link from Canva.', 'warning');
-                }
-
-                return urlObj.toString();
-            }
-
-            // Build Flipkart affiliate link
-            function buildFlipkart(urlObj, affiliateId) {
-                if (!affiliateId) {
-                    throw new Error('Flipkart affiliate ID is required');
-                }
-
-                addOrUpdateParam(urlObj, 'affid', affiliateId);
-                return urlObj.toString();
-            }
-
-            // Build eBay affiliate link
-            function buildEbay(urlObj, campaignId) {
-                if (!campaignId) {
-                    throw new Error('eBay campaign ID is required');
-                }
-
-                addOrUpdateParam(urlObj, 'campid', campaignId);
-                return urlObj.toString();
-            }
-
-            // Build generic affiliate link
-            function buildGeneric(urlObj, paramKV) {
-                if (paramKV && paramKV.includes('=')) {
-                    const [k, v] = paramKV.split('=');
-                    addOrUpdateParam(urlObj, k.trim(), v.trim());
-                } else if (paramKV) {
-                    // Default to 'ref' parameter if no = is provided
-                    addOrUpdateParam(urlObj, 'ref', paramKV.trim());
-                }
-
-                return urlObj.toString();
-            }
-
-            // Apply UTM parameters
-            function applyUTM(urlStr, source, campaign) {
-                const u = new URL(urlStr);
-
-                if (source) addOrUpdateParam(u, 'utm_source', source);
-                if (campaign) addOrUpdateParam(u, 'utm_campaign', campaign);
-
-                // Set medium to affiliate by default
-                addOrUpdateParam(u, 'utm_medium', 'affiliate');
-
-                return u.toString();
-            }
-
-            // Create product card HTML
-            function createCard({ title, url, desc, platform, imageUrl }) {
-                const card = document.createElement('div');
-                card.className = 'product';
-
-                const safeTitle = title || 'Affiliate Link';
-                const safeDesc = desc || '';
-                const safeImage = imageUrl ? `<img src="${escapeHTML(imageUrl)}" alt="${escapeHTML(safeTitle)}" style="max-width:100%; border-radius:8px; margin-bottom:0.75rem;">` : '';
-
-                card.innerHTML = `
-                ${safeImage}
-                <h3>${escapeHTML(safeTitle)}</h3>
-                <div class="meta">
-                    <span class="tag">${escapeHTML(platform)}</span>
-                    <span class="tag">nofollow</span>
-                    <span class="tag">sponsored</span>
+            techItem.innerHTML = `
+                <div class="tech-icon">
+                    <i class="${tech.icon}"></i>
                 </div>
-                <p style="margin:0.5rem 0;color:#cbd5e1">${escapeHTML(safeDesc)}</p>
-                <div class="link-preview" title="${escapeHTML(url)}">${escapeHTML(url)}</div>
-                <div class="cta">
-                    <a class="btn primary" href="${escapeHTML(url)}" target="_blank" rel="nofollow sponsored noopener">View Offer</a>
-                    <button class="btn ghost copy">Copy Link</button>
-                    <button class="btn ghost small delete">Delete</button>
-                    <small style="color:#94a3b8">Opens in new tab • No underline</small>
+                <div class="tech-name">${tech.name}</div>
+            `;
+
+            techStackContainer.appendChild(techItem);
+        });
+
+        // Projects data
+        const projects = [
+            {
+                title: 'E-Learning Platform',
+                description: 'A comprehensive Django-based learning management system with interactive courses and progress tracking.',
+                tags: ['Django', 'Python', 'PostgreSQL', 'Bootstrap'],
+                image: 'https://images.unsplash.com/photo-1546410531-bb4caa6b424d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80',
+                liveUrl: '#',
+                codeUrl: '#',
+                type: 'web'
+            },
+            {
+                title: 'AI-Powered Analytics Dashboard',
+                description: 'Real-time data visualization dashboard with machine learning predictions and interactive charts.',
+                tags: ['FastAPI', 'Python', 'Machine Learning', 'Chart.js'],
+                image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80',
+                liveUrl: '#',
+                codeUrl: '#',
+                type: 'ai'
+            },
+            {
+                title: 'Brand Identity Package',
+                description: 'Complete branding solution including logo, business cards, and social media templates designed in Canva.',
+                tags: ['Canva', 'Graphic Design', 'Branding', 'Social Media'],
+                image: 'https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80',
+                liveUrl: '#',
+                codeUrl: '#',
+                type: 'design'
+            },
+            {
+                title: 'Automated Web Scraper',
+                description: 'Python script using Selenium and BeautifulSoup to collect and analyze data from multiple sources.',
+                tags: ['Python', 'Selenium', 'Web Scraping', 'Automation'],
+                image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80',
+                liveUrl: '#',
+                codeUrl: '#',
+                type: 'automation'
+            },
+            {
+                title: 'Affiliate Link Generator',
+                description: 'Python script using Selenium and BeautifulSoup to collect and analyze data from multiple sources.',
+                tags: ['Python', 'Selenium', 'Web Scraping', 'Automation'],
+                image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80',
+                liveUrl: './main.html',
+                codeUrl: '#',
+                type: 'automation'
+            }
+
+        ];
+
+        // Render projects
+        const projectsContainer = document.getElementById('projectsContainer');
+        projects.forEach(project => {
+            const projectCard = document.createElement('div');
+            projectCard.className = 'project-card';
+
+            // Determine badge color based on project type
+            let badgeClass = '';
+            switch (project.type) {
+                case 'web':
+                    badgeClass = 'primary';
+                    break;
+                case 'ai':
+                    badgeClass = 'secondary';
+                    break;
+                case 'design':
+                    badgeClass = 'success';
+                    break;
+                case 'automation':
+                    badgeClass = 'warning';
+                    break;
+                default:
+                    badgeClass = 'primary';
+            }
+
+            projectCard.innerHTML = `
+                <div class="project-image">
+                    <img src="${project.image}" alt="${project.title}" loading="lazy">
+                    <span class="project-badge" style="background-color: var(--${badgeClass})">${project.type.toUpperCase()}</span>
+                </div>
+                <div class="project-info">
+                    <h3>${project.title}</h3>
+                    <p>${project.description}</p>
+                    <div class="project-tags">
+                        ${project.tags.map(tag => `<span class="project-tag">${tag}</span>`).join('')}
+                    </div>
+                    <div class="project-links">
+                        <a href="${project.liveUrl}" class="btn btn-primary">View Project</a>
+                        ${project.codeUrl ? `<a href="${project.codeUrl}" class="btn btn-outline">View Code</a>` : ''}
+                    </div>
                 </div>
             `;
 
-                // Add event listeners to buttons
-                card.querySelector('.copy').addEventListener('click', async () => {
-                    await navigator.clipboard.writeText(url);
-                    showToast('Link copied to clipboard ✓', 'success');
-                });
+            projectsContainer.appendChild(projectCard);
+        });
 
-                card.querySelector('.delete').addEventListener('click', () => {
-                    deleteLink(url);
-                    card.remove();
-                    showToast('Link deleted', 'error');
-                });
-
-                return card;
+        // Testimonials data
+        const testimonials = [
+            {
+                content: 'Rizwan developed a custom learning platform for our school that transformed how we deliver STEM education. His technical skills and teaching experience made him the perfect partner for this project.',
+                author: 'Dr. Sharma',
+                role: 'School Principal',
+                image: 'https://randomuser.me/api/portraits/men/65.jpg'
+            },
+            {
+                content: 'The brand identity Rizwan created for my startup was exceptional. He understood my vision perfectly and delivered designs that exceeded my expectations.',
+                author: 'Priya Patel',
+                role: 'Startup Founder',
+                image: 'https://randomuser.me/api/portraits/women/44.jpg'
+            },
+            {
+                content: 'As a student in Rizwan sir\'s computer science class, I learned not just coding but how to think like a developer. His real-world examples made complex concepts easy to understand.',
+                author: 'Rahul Verma',
+                role: 'Former Student',
+                image: 'https://randomuser.me/api/portraits/men/32.jpg'
             }
+        ];
 
-            // Delete a link from state
-            function deleteLink(url) {
-                links = links.filter(link => link.url !== url);
-                saveLinks();
+        // Render testimonials
+        const testimonialsContainer = document.getElementById('testimonialsContainer');
+        testimonials.forEach(testimonial => {
+            const testimonialCard = document.createElement('div');
+            testimonialCard.className = 'testimonial-card';
+
+            testimonialCard.innerHTML = `
+                <div class="testimonial-content">
+                    <p>${testimonial.content}</p>
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-image">
+                        <img src="${testimonial.image}" alt="${testimonial.author}" loading="lazy">
+                    </div>
+                    <div class="author-info">
+                        <h4>${testimonial.author}</h4>
+                        <p>${testimonial.role}</p>
+                    </div>
+                </div>
+            `;
+
+            testimonialsContainer.appendChild(testimonialCard);
+        });
+
+        // Form submission
+        const contactForm = document.getElementById('contactForm');
+
+        contactForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+
+            // Here you would typically send the form data to a server
+            // For this example, we'll just show an alert
+            alert(`Thank you, ${name}! Your message has been sent. I'll get back to you soon.`);
+
+            // Reset the form
+            contactForm.reset();
+        });
+
+        // Floating particles animation
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 20;
+
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+
+                // Random size between 5px and 15px
+                const size = Math.random() * 10 + 5;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+
+                // Random position
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.top = `${Math.random() * 100}%`;
+
+                // Random opacity
+                particle.style.opacity = Math.random() * 0.5 + 0.1;
+
+                // Animation duration
+                const duration = Math.random() * 20 + 10;
+                particle.style.animation = `float ${duration}s linear infinite`;
+
+                // Add the particle to the container
+                particlesContainer.appendChild(particle);
             }
+        }
 
-            // Clear all links
-            function clearAllLinks() {
-                if (!links.length) {
-                    showToast('No links to clear', 'warning');
-                    return;
+        // Add floating animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes float {
+                0% {
+                    transform: translate(0, 0) rotate(0deg);
                 }
-
-                if (confirm('Are you sure you want to delete all generated links?')) {
-                    links = [];
-                    saveLinks();
-                    list.innerHTML = '';
-                    showToast('All links cleared', 'error');
+                25% {
+                    transform: translate(20px, 20px) rotate(90deg);
                 }
-            }
-
-            // Copy all links to clipboard
-            async function copyAllLinks() {
-                if (!links.length) {
-                    showToast('No links to copy', 'warning');
-                    return;
+                50% {
+                    transform: translate(0, 40px) rotate(180deg);
                 }
-
-                const linkText = links.map(link => `${link.title}: ${link.url}`).join('\n\n');
-
-                try {
-                    await navigator.clipboard.writeText(linkText);
-                    showToast(`${links.length} links copied to clipboard ✓`, 'success');
-                } catch (err) {
-                    showToast('Failed to copy links', 'error');
-                    console.error(err);
+                75% {
+                    transform: translate(-20px, 20px) rotate(270deg);
                 }
-            }
-
-            // Export links as JSON
-            function exportLinksAsJson() {
-                if (!links.length) {
-                    showToast('No links to export', 'warning');
-                    return;
-                }
-
-                const dataStr = JSON.stringify(links, null, 2);
-                const dataUri = 'data:application/json;charset=utf-8,' + encodeURIComponent(dataStr);
-
-                const exportName = `affiliate-links-${new Date().toISOString().slice(0, 10)}.json`;
-
-                const linkElement = document.createElement('a');
-                linkElement.setAttribute('href', dataUri);
-                linkElement.setAttribute('download', exportName);
-                linkElement.click();
-
-                showToast(`Exported ${links.length} links as JSON ✓`, 'success');
-            }
-
-            // Save links to localStorage
-            function saveLinks() {
-                localStorage.setItem('affiliateLinks', JSON.stringify(links));
-            }
-
-            // Render all links
-            function renderLinks() {
-                list.innerHTML = '';
-
-                if (links.length === 0) {
-                    list.innerHTML = '<p style="color:var(--muted); grid-column:1/-1; text-align:center;">No links generated yet. Create your first affiliate link above.</p>';
-                    return;
-                }
-
-                // Sort by newest first
-                const sortedLinks = [...links].reverse();
-
-                sortedLinks.forEach(link => {
-                    const card = createCard(link);
-                    list.appendChild(card);
-                });
-            }
-
-            // Show toast notification
-            function showToast(msg, type = 'success') {
-                const toast = document.createElement('div');
-                toast.className = `toast ${type}`;
-                toast.textContent = msg;
-
-                // Add icon based on type
-                let icon = '';
-                if (type === 'success') {
-                    icon = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>';
-                } else if (type === 'error') {
-                    icon = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>';
-                } else {
-                    icon = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>';
-                }
-
-                toast.innerHTML = `${icon} ${msg}`;
-
-                document.body.appendChild(toast);
-                setTimeout(() => toast.remove(), 3000);
-            }
-
-            // Escape HTML for safe rendering
-            function escapeHTML(s) {
-                if (!s) return '';
-                return s.replace(/[&<>"']/g, m => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[m]));
-            }
-
-            // Generate affiliate link
-            async function generateLink() {
-                const baseUrl = $("#baseUrl").value.trim();
-                const platform = $("#platform").value;
-                const title = $("#title").value.trim();
-                const desc = $("#desc").value.trim();
-                const tag = $("#tag").value.trim();
-                const utmS = $("#utmSource").value.trim();
-                const utmC = $("#utmCampaign").value.trim();
-                const imageUrl = $("#imageUrl").value.trim();
-
-                // Validate inputs
-                if (!baseUrl) {
-                    showToast('Please enter a product URL', 'error');
-                    $("#baseUrl").focus();
-                    return;
-                }
-
-                // Show loading state
-                buildText.textContent = 'Generating...';
-                buildSpinner.style.display = 'inline-block';
-
-                // Small delay to show loading state
-                await new Promise(resolve => setTimeout(resolve, 300));
-
-                try {
-                    const u = parseURL(baseUrl);
-                    if (!u) return;
-
-                    let finalUrl;
-                    let detectedPlatform = platform;
-
-                    // Auto-detect platform if generic is selected but URL matches known platforms
-                    if (platform === 'generic') {
-                        if (isAmazonHost(u.host)) {
-                            detectedPlatform = 'amazon';
-                        } else if (isFlipkartHost(u.host)) {
-                            detectedPlatform = 'flipkart';
-                        } else if (isEbayHost(u.host)) {
-                            detectedPlatform = 'ebay';
-                        } else if (u.host.includes('canva.com')) {
-                            detectedPlatform = 'canva';
-                        }
-                    }
-
-                    // Build URL based on platform
-                    switch (detectedPlatform) {
-                        case 'amazon':
-                            finalUrl = buildAmazon(u, tag || 'YOURTAG-21');
-                            break;
-                        case 'canva':
-                            finalUrl = buildCanva(u);
-                            break;
-                        case 'flipkart':
-                            finalUrl = buildFlipkart(u, tag);
-                            break;
-                        case 'ebay':
-                            finalUrl = buildEbay(u, tag);
-                            break;
-                        default:
-                            finalUrl = buildGeneric(u, tag);
-                    }
-
-                    // Apply UTM parameters
-                    finalUrl = applyUTM(finalUrl, utmS, utmC);
-
-                    // Create link object
-                    const link = {
-                        title: title || 'Affiliate Link',
-                        url: finalUrl,
-                        desc: desc,
-                        platform: detectedPlatform,
-                        imageUrl: imageUrl,
-                        createdAt: new Date().toISOString()
-                    };
-
-                    // Add to state and save
-                    links.push(link);
-                    saveLinks();
-
-                    // Render the new link
-                    const card = createCard(link);
-                    list.prepend(card);
-
-                    // Clear the "no links" message if it exists
-                    if (links.length === 1) {
-                        renderLinks();
-                    }
-
-                    showToast('Affiliate link generated ✓', 'success');
-
-                } catch (err) {
-                    console.error(err);
-                    showToast(err.message || 'Error generating link', 'error');
-                } finally {
-                    // Reset loading state
-                    buildText.textContent = 'Generate Link';
-                    buildSpinner.style.display = 'none';
+                100% {
+                    transform: translate(0, 0) rotate(360deg);
                 }
             }
+        `;
+        document.head.appendChild(style);
 
-            // Initialize the application
-            init();
-        })();
+        // Create particles when page loads
+        window.addEventListener('load', createParticles);
+
+        // Animate elements when scrolling
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.service-card, .project-card, .testimonial-card, .tech-item, .timeline-item');
+
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
+
+                if (elementPosition < screenPosition) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        };
+
+        // Set initial styles for animation
+        document.querySelectorAll('.service-card, .project-card, .testimonial-card, .tech-item, .timeline-item').forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(20px)';
+            element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+        });
+
+        window.addEventListener('scroll', animateOnScroll);
+        // Trigger once on load
+        animateOnScroll();
     </script>
 </body>
 
