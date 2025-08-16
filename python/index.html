@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Development Portfolio | Python & JavaScript Developer</title>
+    <meta name="description"
+        content="Custom web applications built with Python, Django, FastAPI, and modern JavaScript frameworks. View 200+ GitHub repositories.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <span class="logo-icon"><i class="fas fa-code"></i></span>
+                <h1>Web Dev Portfolio</h1>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="https://github.com/yourusername" class="btn" target="_blank">My GitHub</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Full Stack Web Developer</h2>
+                <p>Custom web applications built with Python, Django, FastAPI, and modern JavaScript frameworks</p>
+                <div class="hero-btns">
+                    <a href="#projects" class="btn btn-primary">View Projects</a>
+                    <a href="https://github.com/yourusername" class="btn btn-secondary" target="_blank">200+ GitHub
+                        Repos</a>
+                </div>
+                <div class="tech-stack">
+                    <div class="tech-icon" title="Python">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <div class="tech-icon" title="Django">
+                        <i class="fab fa-envira"></i>
+                    </div>
+                    <div class="tech-icon" title="JavaScript">
+                        <i class="fab fa-js"></i>
+                    </div>
+                    <div class="tech-icon" title="React">
+                        <i class="fab fa-react"></i>
+                    </div>
+                    <div class="tech-icon" title="Node.js">
+                        <i class="fab fa-node"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                    alt="Web development">
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <p class="section-subtitle">A selection of my best web development work</p>
+
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="python">Python</button>
+                <button class="filter-btn" data-filter="django">Django</button>
+                <button class="filter-btn" data-filter="fastapi">FastAPI</button>
+                <button class="filter-btn" data-filter="javascript">JavaScript</button>
+            </div>
+
+            <div class="projects-grid">
+                <!-- Items will be added dynamically via JS -->
+            </div>
+
+            <div class="projects-cta">
+                <p>Want to see all 200+ projects?</p>
+                <a href="https://github.com/yourusername" class="btn btn-primary" target="_blank">View My GitHub</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            <p class="section-subtitle">Technologies I work with regularly</p>
+
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Backend</h3>
+                    <ul>
+                        <li>Python</li>
+                        <li>Django</li>
+                        <li>Django REST Framework</li>
+                        <li>FastAPI</li>
+                        <li>Flask</li>
+                        <li>Node.js</li>
+                        <li>PostgreSQL</li>
+                        <li>MongoDB</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Frontend</h3>
+                    <ul>
+                        <li>JavaScript</li>
+                        <li>TypeScript</li>
+                        <li>React</li>
+                        <li>Vue.js</li>
+                        <li>Next.js</li>
+                        <li>HTML5 & CSS3</li>
+                        <li>Tailwind CSS</li>
+                        <li>Sass</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>DevOps & Tools</h3>
+                    <ul>
+                        <li>Docker</li>
+                        <li>Kubernetes</li>
+                        <li>AWS</li>
+                        <li>Git</li>
+                        <li>GitHub Actions</li>
+                        <li>CI/CD</li>
+                        <li>Nginx</li>
+                        <li>Linux</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <h2 class="section-title">About Me</h2>
+                <p>I'm a passionate full-stack developer with expertise in Python and JavaScript ecosystems. I
+                    specialize in building robust, scalable web applications using modern technologies.</p>
+                <p>With over 200 public repositories on GitHub, I'm constantly learning and contributing to open source.
+                    I believe in clean code, best practices, and continuous improvement.</p>
+                <div class="about-stats">
+                    <div class="stat">
+                        <span class="stat-number">200+</span>
+                        <span class="stat-label">GitHub Repos</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">5+</span>
+                        <span class="stat-label">Years Experience</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label">Projects Completed</span>
+                    </div>
+                </div>
+            </div>
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                    alt="Developer working">
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="section-subtitle">Have a project in mind or want to collaborate?</p>
+
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:dev@example.com">dev@example.com</a></li>
+                        <li><i class="fab fa-github"></i> <a href="https://github.com/yourusername"
+                                target="_blank">github.com/yourusername</a></li>
+                        <li><i class="fab fa-linkedin"></i> <a href="#" target="_blank">linkedin.com/in/yourprofile</a>
+                        </li>
+                        <li><i class="fab fa-twitter"></i> <a href="#" target="_blank">@yourhandle</a></li>
+                    </ul>
+
+                    <div class="direct-links">
+                        <h3>View My Work</h3>
+                        <a href="https://github.com/yourusername" class="btn btn-primary" target="_blank">
+                            <i class="fab fa-github"></i> GitHub Profile
+                        </a>
+                        <a href="#" class="btn btn-secondary" target="_blank">
+                            <i class="fas fa-file-alt"></i> Download Resume
+                        </a>
+                    </div>
+                </div>
+
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <h3>Web Dev Portfolio</h3>
+                    <p>Custom web applications built with Python, Django, FastAPI, and modern JavaScript frameworks.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="https://github.com/yourusername" target="_blank">GitHub</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h3>Connect With Me</h3>
+                    <div class="social-icons">
+                        <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-dev"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> Web Dev Portfolio. All rights reserved.</p>
+                <p>Built with <i class="fas fa-heart"></i> and <i class="fas fa-code"></i></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

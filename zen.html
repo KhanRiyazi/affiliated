@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Marketing Zen | Simple, Powerful Tools</title>
+    <meta name="description" content="Calm, clutter-free AI marketing tools that just work">
+
+    <!-- Zen Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Noto+Sans+JP:wght@300;400;500&display=swap"
+        rel="stylesheet">
+
+    <!-- Simple Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: #2B6CB0;
+            --primary-light: #EBF8FF;
+            --text: #2D3748;
+            --text-light: #718096;
+            --bg: #F7FAFC;
+            --white: #FFFFFF;
+            --border: #E2E8F0;
+            --shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            --radius: 8px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Noto Sans JP', sans-serif;
+            color: var(--text);
+            background-color: var(--bg);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: var(--white);
+            padding: 20px 0;
+            box-shadow: var(--shadow);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text);
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: var(--primary);
+            color: white;
+            border-radius: var(--radius);
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .hero p {
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        /* Dashboard */
+        .dashboard {
+            background: var(--white);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 30px;
+            margin-bottom: 40px;
+        }
+
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .metric-card {
+            background: var(--primary-light);
+            padding: 20px;
+            border-radius: var(--radius);
+            text-align: center;
+        }
+
+        .metric-value {
+            font-size: 2rem;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+
+        .metric-label {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* Simple Chart */
+        .chart {
+            height: 300px;
+            background: var(--bg);
+            border-radius: var(--radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 30px;
+            color: var(--text-light);
+        }
+
+        /* Recommendations */
+        .recommendation {
+            background: var(--bg);
+            padding: 20px;
+            border-radius: var(--radius);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .recommendation i {
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+
+        /* Tools Grid */
+        .tools {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .tool-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 20px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .tool-card h3 {
+            margin-bottom: 10px;
+        }
+
+        .tool-card p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* Mobile Friendly */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .metrics {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">AI Marketing Zen</div>
+                <div class="nav-links">
+                    <a href="#dashboard">Dashboard</a>
+                    <a href="#tools">Tools</a>
+                    <a href="#learn">Learn</a>
+                    <a href="#support">Support</a>
+                    <a href="#" class="btn">Try Free</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <h1>Calm, Clear AI Marketing</h1>
+            <p>No clutter. No complexity. Just powerful tools that help you grow.</p>
+            <a href="#dashboard" class="btn">Explore Dashboard</a>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Dashboard -->
+        <section id="dashboard" class="dashboard">
+            <h2>Your Marketing at a Glance</h2>
+            <p style="color: var(--text-light); margin-bottom: 20px;">Last 30 days performance</p>
+
+            <div class="metrics">
+                <div class="metric-card">
+                    <div class="metric-value">$24,728</div>
+                    <div class="metric-label">Total Revenue</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">3.42%</div>
+                    <div class="metric-label">Conversion Rate</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">1,284</div>
+                    <div class="metric-label">New Customers</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">5.8x</div>
+                    <div class="metric-label">ROI</div>
+                </div>
+            </div>
+
+            <div class="chart">
+                Campaign Performance Chart
+            </div>
+
+            <h3 style="margin-bottom: 15px;">AI Suggestions</h3>
+            <div class="recommendation">
+                <i class="fas fa-ad"></i>
+                <div>
+                    <p>Increase Facebook ad budget by $150/day for 28% more conversions</p>
+                </div>
+            </div>
+            <div class="recommendation">
+                <i class="fas fa-users"></i>
+                <div>
+                    <p>New high-value audience detected: Women 35-54 interested in sustainability</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tools -->
+        <section id="tools">
+            <h2 style="margin-bottom: 20px;">Essential Tools</h2>
+            <div class="tools">
+                <div class="tool-card">
+                    <h3>Google Ads AI</h3>
+                    <p>Automate bidding and optimize campaigns with machine learning.</p>
+                    <a href="https://ads.google.com" target="_blank" class="btn">Connect</a>
+                </div>
+                <div class="tool-card">
+                    <h3>Facebook Ads</h3>
+                    <p>Advanced targeting and automated creative optimization.</p>
+                    <a href="https://www.facebook.com/business/tools/ads-manager" target="_blank"
+                        class="btn">Connect</a>
+                </div>
+                <div class="tool-card">
+                    <h3>Email Automation</h3>
+                    <p>Send the right message at the perfect time.</p>
+                    <a href="#" class="btn">Connect</a>
+                </div>
+                <div class="tool-card">
+                    <h3>Content Assistant</h3>
+                    <p>AI-powered writing for better engagement.</p>
+                    <a href="#" class="btn">Connect</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>AI Marketing Zen — Simple tools for meaningful growth</p>
+            <p style="margin-top: 10px;">© 2023 All rights reserved</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple interactive elements
+        document.querySelectorAll('.recommendation').forEach(item => {
+            item.addEventListener('click', () => {
+                alert("This would open detailed recommendation in a real app");
+            });
+        });
+
+        // Animate metrics on load
+        function animateValue(id, start, end, duration) {
+            let startTimestamp = null;
+            const element = document.getElementById(id);
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                element.innerHTML = Math.floor(progress * (end - start) + start);
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+
+        // Wait for everything to load
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                animateValue("revenue", 0, 24728, 1000);
+                animateValue("conversion", 0, 3.42, 1000);
+                animateValue("customers", 0, 1284, 1000);
+                animateValue("roi", 0, 5.8, 1000);
+            }, 500);
+        });
+    </script>
+</body>
+
+</html>
