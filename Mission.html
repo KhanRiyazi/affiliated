@@ -1,0 +1,1582 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduFutura | AI-Powered Learning Ecosystem</title>
+    <style>
+        :root {
+            --primary: #4361ee;
+            --secondary: #3f37c9;
+            --accent: #4cc9f0;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --success: #4ad66d;
+            --warning: #f7a52c;
+            --danger: #ef233c;
+            --text: #2b2d42;
+            --text-light: #8d99ae;
+            --youtube: #ff0000;
+            --canva: #00c4cc;
+            --scratch: #f7a52c;
+            --github: #181717;
+            --blog: #6c5ce7;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            background-color: #f9fbfd;
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Modern Header */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        .logo-text {
+            font-size: 1.25rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-actions {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            border: none;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            box-shadow: 0 4px 15px rgba(67, 97, 238, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(67, 97, 238, 0.4);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: rgba(67, 97, 238, 0.05);
+        }
+
+        .btn-youtube {
+            background: var(--youtube);
+            color: white;
+        }
+
+        .btn-canva {
+            background: var(--canva);
+            color: white;
+        }
+
+        .btn-scratch {
+            background: var(--scratch);
+            color: white;
+        }
+
+        .btn-github {
+            background: var(--github);
+            color: white;
+        }
+
+        .btn-blog {
+            background: var(--blog);
+            color: white;
+        }
+
+        .btn-small {
+            padding: 0.5rem 1rem;
+            font-size: 0.85rem;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 8rem 5% 6rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            max-width: 500px;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .stat-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .stat-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: rgba(67, 97, 238, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+        }
+
+        .stat-text h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        .stat-text p {
+            font-size: 0.8rem;
+            color: var(--text-light);
+        }
+
+        .hero-image {
+            position: relative;
+        }
+
+        .hero-image img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 25px 50px rgba(67, 97, 238, 0.15);
+            transform: perspective(1000px) rotateY(-10deg);
+            transition: transform 0.5s ease;
+        }
+
+        .hero-image:hover img {
+            transform: perspective(1000px) rotateY(0deg);
+        }
+
+        .hero-pattern {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 60%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="%234cc9f0" stroke-width="0.5" opacity="0.2"/></svg>') repeat;
+            background-size: 100px 100px;
+            opacity: 0.3;
+            z-index: -1;
+        }
+
+        /* Section Header */
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .section-header p {
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* YouTube Channel Section */
+        .youtube-channel {
+            padding: 6rem 5%;
+            background: white;
+        }
+
+        .channel-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .channel-header {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .channel-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 3px solid white;
+        }
+
+        .channel-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .channel-info h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+
+        .channel-info p {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        .channel-stats {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .channel-stat {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .channel-stat i {
+            color: var(--youtube);
+        }
+
+        .channel-stat span {
+            font-weight: 600;
+        }
+
+        .videos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .video-card {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            background: white;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .video-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .video-thumbnail {
+            position: relative;
+            height: 180px;
+            overflow: hidden;
+        }
+
+        .video-thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .video-card:hover .video-thumbnail img {
+            transform: scale(1.05);
+        }
+
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 0, 0, 0.8);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            cursor: pointer;
+        }
+
+        .video-card:hover .play-button {
+            opacity: 1;
+        }
+
+        .video-info {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .video-info h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+
+        .video-info p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            flex-grow: 1;
+        }
+
+        .video-meta {
+            display: flex;
+            justify-content: space-between;
+            color: var(--text-light);
+            font-size: 0.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .video-actions {
+            display: flex;
+            gap: 0.75rem;
+            margin-top: auto;
+        }
+
+        .video-actions .btn {
+            flex: 1;
+            text-align: center;
+            padding: 0.5rem;
+            font-size: 0.8rem;
+        }
+
+        /* Video Modal */
+        .video-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .video-modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-content {
+            width: 90%;
+            max-width: 900px;
+            position: relative;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Resource Platforms Section */
+        .platforms {
+            padding: 6rem 5%;
+            background: linear-gradient(to bottom, #ffffff, #f9fbfd);
+        }
+
+        .platforms-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .platform-card {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.03);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .platform-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .platform-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .platform-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .platform-icon.canva {
+            background: var(--canva);
+        }
+
+        .platform-icon.scratch {
+            background: var(--scratch);
+        }
+
+        .platform-icon.github {
+            background: var(--github);
+        }
+
+        .platform-icon.blog {
+            background: var(--blog);
+        }
+
+        .platform-header h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--dark);
+        }
+
+        .platform-stats {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .platform-stat {
+            background: rgba(67, 97, 238, 0.05);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .platform-content p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+        }
+
+        .platform-actions {
+            display: flex;
+            gap: 1rem;
+            margin-top: auto;
+        }
+
+        /* Scratch Projects Section */
+        .scratch-projects {
+            padding: 6rem 5%;
+            background: white;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 3rem auto 0;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-thumbnail {
+            position: relative;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .project-thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .project-card:hover .project-thumbnail img {
+            transform: scale(1.05);
+        }
+
+        .project-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--scratch);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .project-info {
+            padding: 1.5rem;
+        }
+
+        .project-info h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+
+        .project-info p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+        }
+
+        .project-actions {
+            display: flex;
+            gap: 1rem;
+        }
+
+        /* CTA Section */
+        .cta {
+            padding: 8rem 5%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-container {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta p {
+            opacity: 0.9;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .cta-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .cta .btn-outline {
+            color: white;
+            border-color: white;
+        }
+
+        .cta .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .cta-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="white" stroke-width="0.5" opacity="0.1"/></svg>') repeat;
+            background-size: 100px 100px;
+            z-index: 1;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 6rem 5% 3rem;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+        }
+
+        .footer-col:first-child {
+            grid-column: 1 / -1;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-logo-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        .footer-logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+        }
+
+        .footer-about {
+            max-width: 400px;
+            opacity: 0.8;
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .footer-social a {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+
+        .footer-social a:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .footer-col h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 1rem;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .footer-links a:hover {
+            color: white;
+            transform: translateX(5px);
+        }
+
+        .footer-contact p {
+            margin-bottom: 1rem;
+            opacity: 0.8;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+        }
+
+        .footer-contact i {
+            margin-top: 3px;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 1024px) {
+            .hero-content h1 {
+                font-size: 3rem;
+            }
+
+            .channel-header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .channel-stats {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 1rem;
+            }
+
+            .nav-links {
+                display: none;
+                position: fixed;
+                top: 80px;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 2rem;
+                gap: 1.5rem;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+                z-index: 99;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero-container {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .hero-content {
+                text-align: center;
+            }
+
+            .hero-content p {
+                margin: 0 auto 2rem;
+            }
+
+            .hero-actions {
+                justify-content: center;
+            }
+
+            .hero-stats {
+                justify-content: center;
+            }
+
+            .cta-actions,
+            .platform-actions,
+            .project-actions {
+                flex-direction: column;
+            }
+
+            .video-actions {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+
+            .channel-avatar {
+                width: 80px;
+                height: 80px;
+            }
+
+            .channel-info h2 {
+                font-size: 1.5rem;
+            }
+
+            .channel-stats {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                align-items: center;
+                gap: 1.5rem;
+            }
+
+            .stat-item {
+                justify-content: center;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <!-- Modern Header -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <div class="logo-icon">EF</div>
+                <div class="logo-text">EduFutura</div>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#youtube">YouTube</a></li>
+                <li><a href="#platforms">Resources</a></li>
+                <li><a href="#scratch">Scratch</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="#" class="btn btn-outline">Login</a>
+                <a href="#" class="btn btn-primary">Get Started</a>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>My Educational Ecosystem</h1>
+                <p>500+ tech videos, 100+ Canva designs, and MIT Scratch programs combined with 5+ years of teaching
+                    experience to create transformative learning experiences.</p>
+                <div class="hero-actions">
+                    <a href="#youtube" class="btn btn-primary">
+                        <i class="fab fa-youtube"></i> Visit Channel
+                    </a>
+                    <a href="#platforms" class="btn btn-outline">
+                        <i class="fas fa-box-open"></i> All Resources
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-icon">
+                            <i class="fab fa-youtube"></i>
+                        </div>
+                        <div class="stat-text">
+                            <h3 id="stat1">0</h3>
+                            <p>YouTube Videos</p>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <div class="stat-text">
+                            <h3 id="stat2">0</h3>
+                            <p>Canva Designs</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="/learn.png" alt="Educational Resources">
+            </div>
+        </div>
+        <div class="hero-pattern"></div>
+    </section>
+
+    <!-- YouTube Channel Section -->
+    <section class="youtube-channel" id="youtube">
+        <div class="channel-container">
+            <div class="channel-header">
+                <div class="channel-avatar">
+                    <img src="/learn.png" alt="ThisOne-007 Channel Avatar">
+                </div>
+                <div class="channel-info">
+                    <h2>ThisOne-007 YouTube Channel</h2>
+                    <p>500+ technology tutorials, counseling videos, and educational content to empower learners
+                        worldwide.</p>
+                    <div class="channel-stats">
+                        <div class="channel-stat">
+                            <i class="fas fa-video"></i>
+                            <span>500+ Videos</span>
+                        </div>
+                        <div class="channel-stat">
+                            <i class="fas fa-users"></i>
+                            <span>10,000+ Subscribers</span>
+                        </div>
+                        <div class="channel-stat">
+                            <i class="fas fa-eye"></i>
+                            <span>1M+ Views</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-header">
+                <h2>Featured Videos</h2>
+                <p>Popular tutorials and educational content from my channel</p>
+            </div>
+
+            <div class="videos-grid">
+                <!-- Video 1 -->
+                <div class="video-card" data-video-id="dQw4w9WgXcQ">
+                    <div class="video-thumbnail">
+                        <img src="https://i.ytimg.com/vi/dQw4w9WgXcQ/maxresdefault.jpg" alt="Python Tutorial">
+                        <div class="play-button">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h3>Complete Python Web Scraping Guide</h3>
+                        <p>Learn to extract web data using BeautifulSoup and Selenium with practical examples.</p>
+                        <div class="video-meta">
+                            <span><i class="fas fa-eye"></i> 50K views</span>
+                            <span><i class="fas fa-calendar"></i> 3 months ago</span>
+                        </div>
+                        <div class="video-actions">
+                            <button class="btn btn-primary btn-small watch-btn">
+                                <i class="fas fa-play"></i> Watch Here
+                            </button>
+                            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank"
+                                class="btn btn-youtube btn-small">
+                                <i class="fab fa-youtube"></i> On YouTube
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video 2 -->
+                <div class="video-card" data-video-id="9bZkp7q19f0">
+                    <div class="video-thumbnail">
+                        <img src="https://i.ytimg.com/vi/9bZkp7q19f0/maxresdefault.jpg" alt="Career Counseling">
+                        <div class="play-button">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h3>Career Path Selection Guide</h3>
+                        <p>How to choose the right career after 12th grade based on your skills and interests.</p>
+                        <div class="video-meta">
+                            <span><i class="fas fa-eye"></i> 100K views</span>
+                            <span><i class="fas fa-calendar"></i> 6 months ago</span>
+                        </div>
+                        <div class="video-actions">
+                            <button class="btn btn-primary btn-small watch-btn">
+                                <i class="fas fa-play"></i> Watch Here
+                            </button>
+                            <a href="https://www.youtube.com/watch?v=9bZkp7q19f0" target="_blank"
+                                class="btn btn-youtube btn-small">
+                                <i class="fab fa-youtube"></i> On YouTube
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video 3 -->
+                <div class="video-card" data-video-id="3JluqTojuME">
+                    <div class="video-thumbnail">
+                        <img src="https://i.ytimg.com/vi/3JluqTojuME/maxresdefault.jpg" alt="MIT Scratch">
+                        <div class="play-button">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h3>MIT Scratch for Beginners</h3>
+                        <p>Complete guide to block programming for young learners with fun projects.</p>
+                        <div class="video-meta">
+                            <span><i class="fas fa-eye"></i> 25K views</span>
+                            <span><i class="fas fa-calendar"></i> 1 year ago</span>
+                        </div>
+                        <div class="video-actions">
+                            <button class="btn btn-primary btn-small watch-btn">
+                                <i class="fas fa-play"></i> Watch Here
+                            </button>
+                            <a href="https://www.youtube.com/watch?v=3JluqTojuME" target="_blank"
+                                class="btn btn-youtube btn-small">
+                                <i class="fab fa-youtube"></i> On YouTube
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="https://www.youtube.com/@ThisOne-007" class="btn btn-youtube" target="_blank">
+                    <i class="fab fa-youtube"></i> View All Videos
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Modal -->
+    <div class="video-modal" id="videoModal">
+        <div class="modal-content">
+            <button class="close-modal" id="closeModal">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="video-container">
+                <iframe id="youtubeFrame" width="560" height="315" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Resource Platforms Section -->
+    <section class="platforms" id="platforms">
+        <div class="section-header">
+            <h2>My Resource Platforms</h2>
+            <p>All my educational content across different platforms and mediums</p>
+        </div>
+        <div class="platforms-grid">
+            <div class="platform-card">
+                <div class="platform-header">
+                    <div class="platform-icon canva">
+                        <i class="fab fa-canva"></i>
+                    </div>
+                    <h3>Canva Designs</h3>
+                </div>
+                <div class="platform-stats">
+                    <span class="platform-stat">100+ Templates</span>
+                    <span class="platform-stat">Educational</span>
+                </div>
+                <div class="platform-content">
+                    <p>Collection of visually appealing educational templates, infographics, and presentation designs
+                        for effective teaching.</p>
+                </div>
+                <div class="platform-actions">
+                    <a href="https://www.canva.com/your-profile" target="_blank" class="btn btn-canva btn-small">
+                        <i class="fas fa-eye"></i> View Designs
+                    </a>
+                    <a href="https://www.canva.com/your-profile" target="_blank" class="btn btn-outline btn-small">
+                        <i class="fas fa-palette"></i> Customize
+                    </a>
+                </div>
+            </div>
+
+            <div class="platform-card">
+                <div class="platform-header">
+                    <div class="platform-icon github">
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <h3>GitHub Repos</h3>
+                </div>
+                <div class="platform-stats">
+                    <span class="platform-stat">200+ Repositories</span>
+                    <span class="platform-stat">Open Source</span>
+                </div>
+                <div class="platform-content">
+                    <p>Technical projects, code samples, and educational resources covering web development, automation,
+                        and APIs.</p>
+                </div>
+                <div class="platform-actions">
+                    <a href="https://github.com/yourusername" target="_blank" class="btn btn-github btn-small">
+                        <i class="fas fa-eye"></i> View Code
+                    </a>
+                    <a href="https://github.com/yourusername" target="_blank" class="btn btn-outline btn-small">
+                        <i class="fas fa-code-branch"></i> Fork Repo
+                    </a>
+                </div>
+            </div>
+
+            <div class="platform-card">
+                <div class="platform-header">
+                    <div class="platform-icon blog">
+                        <i class="fas fa-blog"></i>
+                    </div>
+                    <h3>Personal Blog</h3>
+                </div>
+                <div class="platform-stats">
+                    <span class="platform-stat">50+ Articles</span>
+                    <span class="platform-stat">Tech & Education</span>
+                </div>
+                <div class="platform-content">
+                    <p>Insights, tutorials, and reflections on technology education, teaching methodologies, and
+                        learning strategies.</p>
+                </div>
+                <div class="platform-actions">
+                    <a href="https://yourblog.com" target="_blank" class="btn btn-blog btn-small">
+                        <i class="fas fa-book-open"></i> Read Blog
+                    </a>
+                    <a href="https://yourblog.com" target="_blank" class="btn btn-outline btn-small">
+                        <i class="fas fa-comment"></i> Discuss
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scratch Projects Section -->
+    <section class="scratch-projects" id="scratch">
+        <div class="section-header">
+            <h2>MIT Scratch Programming</h2>
+            <p>Interactive coding projects designed to teach computational thinking and creativity</p>
+        </div>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-thumbnail">
+                    <img src="https://images.unsplash.com/photo-1551033406-611cf9a28f67?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                        alt="Game Project">
+                    <div class="project-badge">Scratch</div>
+                </div>
+                <div class="project-info">
+                    <h3>Interactive Math Game</h3>
+                    <p>Fun educational game that helps students practice arithmetic operations through engaging
+                        challenges.</p>
+                    <div class="project-actions">
+                        <a href="https://scratch.mit.edu/projects/123" target="_blank"
+                            class="btn btn-scratch btn-small">
+                            <i class="fas fa-play"></i> Play Game
+                        </a>
+                        <a href="https://scratch.mit.edu/projects/123/editor" target="_blank"
+                            class="btn btn-outline btn-small">
+                            <i class="fas fa-code"></i> View Code
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-thumbnail">
+                    <img src="https://images.unsplash.com/photo-1547036967-23d11aacaee0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                        alt="Animation Project">
+                    <div class="project-badge">Scratch</div>
+                </div>
+                <div class="project-info">
+                    <h3>Story Animation</h3>
+                    <p>Interactive storytelling project with animated characters and scene transitions.</p>
+                    <div class="project-actions">
+                        <a href="https://scratch.mit.edu/projects/456" target="_blank"
+                            class="btn btn-scratch btn-small">
+                            <i class="fas fa-play"></i> View Animation
+                        </a>
+                        <a href="https://scratch.mit.edu/projects/456/editor" target="_blank"
+                            class="btn btn-outline btn-small">
+                            <i class="fas fa-code"></i> View Code
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-thumbnail">
+                    <img src="https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                        alt="Quiz Project">
+                    <div class="project-badge">Scratch</div>
+                </div>
+                <div class="project-info">
+                    <h3>Science Quiz</h3>
+                    <p>Interactive quiz game with multiple choice questions and instant feedback system.</p>
+                    <div class="project-actions">
+                        <a href="https://scratch.mit.edu/projects/789" target="_blank"
+                            class="btn btn-scratch btn-small">
+                            <i class="fas fa-play"></i> Take Quiz
+                        </a>
+                        <a href="https://scratch.mit.edu/projects/789/editor" target="_blank"
+                            class="btn btn-outline btn-small">
+                            <i class="fas fa-code"></i> View Code
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 3rem;">
+            <a href="https://scratch.mit.edu/users/yourprofile" class="btn btn-scratch" target="_blank">
+                <i class="fas fa-code"></i> View All Scratch Projects
+            </a>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta" id="contact">
+        <div class="cta-container">
+            <h2>Ready to Collaborate?</h2>
+            <p>Let's work together to create innovative educational experiences using my resources and expertise.</p>
+            <div class="cta-actions">
+                <a href="#" class="btn btn-primary">
+                    <i class="fas fa-envelope"></i> Contact Me
+                </a>
+                <a href="#" class="btn btn-outline">
+                    <i class="fas fa-calendar"></i> Schedule Call
+                </a>
+            </div>
+        </div>
+        <div class="cta-pattern"></div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <div class="footer-logo">
+                    <div class="footer-logo-icon">EF</div>
+                    <div class="footer-logo-text">EduFutura</div>
+                </div>
+                <p class="footer-about">Combining technical expertise with pedagogical experience to create
+                    transformative learning experiences.</p>
+                <div class="footer-social">
+                    <a href="https://www.youtube.com/@ThisOne-007" target="_blank"
+                        style="background: rgba(255, 0, 0, 0.1); color: var(--youtube);">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="https://github.com/yourusername" target="_blank"
+                        style="background: rgba(24, 23, 23, 0.1); color: var(--github);">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://scratch.mit.edu/users/yourprofile" target="_blank"
+                        style="background: rgba(247, 165, 44, 0.1); color: var(--scratch);">
+                        <i class="fas fa-code"></i>
+                    </a>
+                    <a href="https://www.canva.com/your-profile" target="_blank"
+                        style="background: rgba(0, 196, 204, 0.1); color: var(--canva);">
+                        <i class="fab fa-canva"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>Resources</h3>
+                <ul class="footer-links">
+                    <li><a href="https://www.youtube.com/@ThisOne-007" target="_blank">YouTube Channel</a></li>
+                    <li><a href="https://github.com/yourusername" target="_blank">GitHub Repositories</a></li>
+                    <li><a href="https://www.canva.com/your-profile" target="_blank">Canva Designs</a></li>
+                    <li><a href="https://scratch.mit.edu/users/yourprofile" target="_blank">Scratch Projects</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Teaching</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Programming Courses</a></li>
+                    <li><a href="#">Educational Templates</a></li>
+                    <li><a href="#">Coding Curriculum</a></li>
+                    <li><a href="#">Teacher Resources</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Contact</h3>
+                <div class="footer-contact">
+                    <p><i class="fas fa-envelope"></i> contact@edufutura.com</p>
+                    <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+                    <p><i class="fas fa-map-marker-alt"></i> New Delhi, India</p>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 EduFutura Learning Ecosystem. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        document.getElementById('mobileMenuBtn').addEventListener('click', function () {
+            document.getElementById('navLinks').classList.toggle('active');
+            this.innerHTML = this.innerHTML.includes('bars') ?
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+
+        // Animate stats counter
+        const stats = [
+            { element: 'stat1', target: 500, suffix: '+' },
+            { element: 'stat2', target: 100, suffix: '+' }
+        ];
+
+        function animateStats() {
+            stats.forEach(stat => {
+                const element = document.getElementById(stat.element);
+                const target = stat.target;
+                let count = 0;
+                const increment = target / 50;
+                const timer = setInterval(() => {
+                    count += increment;
+                    if (count >= target) {
+                        clearInterval(timer);
+                        element.textContent = target + (stat.suffix || '');
+                    } else {
+                        element.textContent = Math.floor(count) + (stat.suffix || '');
+                    }
+                }, 20);
+            });
+        }
+
+        // Video Modal Functionality
+        const videoModal = document.getElementById('videoModal');
+        const closeModal = document.getElementById('closeModal');
+        const youtubeFrame = document.getElementById('youtubeFrame');
+        const watchButtons = document.querySelectorAll('.watch-btn');
+        const videoCards = document.querySelectorAll('.video-card');
+
+        // Open modal with video
+        watchButtons.forEach((button, index) => {
+            button.addEventListener('click', () => {
+                const videoCard = button.closest('.video-card');
+                const videoId = videoCard.getAttribute('data-video-id');
+                youtubeFrame.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1`;
+                videoModal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        // Also make the entire video card clickable to open modal
+        videoCards.forEach(card => {
+            card.addEventListener('click', (e) => {
+                // Only trigger if not clicking on a button or link
+                if (!e.target.closest('a') && !e.target.closest('button')) {
+                    const videoId = card.getAttribute('data-video-id');
+                    youtubeFrame.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1`;
+                    videoModal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                }
+            });
+        });
+
+        // Close modal
+        closeModal.addEventListener('click', () => {
+            youtubeFrame.src = '';
+            videoModal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+
+        // Close modal when clicking outside
+        videoModal.addEventListener('click', (e) => {
+            if (e.target === videoModal) {
+                youtubeFrame.src = '';
+                videoModal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Trigger stats animation when hero section is in view
+        const heroSection = document.querySelector('.hero');
+        const observer = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting) {
+                animateStats();
+                observer.unobserve(heroSection);
+            }
+        }, { threshold: 0.5 });
+
+        observer.observe(heroSection);
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId !== '#') {
+                    document.querySelector(targetId).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    // Close mobile menu if open
+                    if (window.innerWidth <= 768) {
+                        document.getElementById('navLinks').classList.remove('active');
+                        document.getElementById('mobileMenuBtn').innerHTML = '<i class="fas fa-bars"></i>';
+                    }
+                }
+            });
+        });
+
+        // Add animation to elements when they come into view
+        const animateOnScroll = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.platform-card, .project-card, .video-card').forEach(el => {
+            animateOnScroll.observe(el);
+        });
+    </script>
+</body>
+
+</html>
